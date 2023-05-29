@@ -1,2 +1,2 @@
 email = input("What is your gapps email?:")
-name = ("What is your full name?:")
+name = input("What is your full name?:")
