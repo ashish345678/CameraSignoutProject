@@ -1,7 +1,9 @@
-import tkinter as tk 
+from tkinter import*
 
-root = tk.Tk()
+root = Tk()
 
+rebel = 3
+nikon = 3
 SignOut = Button(root, text="Sign out" )
 
 root.mainloop()
