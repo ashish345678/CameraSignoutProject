@@ -1,5 +1,4 @@
-from tkinter import *
-from tkinter.ttk import *
+from tkinter import*
 
 # Tkinter page
 root = Tk()
@@ -11,7 +10,7 @@ label = Label(root, text="Camera Sign Out")
 rebel = 3
 nikon = 3
 
-#buttons 
+#button
 SignOut = Button(root, text="Sign out", height = 5, width = 15)
 SignOut.place(x = 280, y = 300)
 Return = Button(root, text="return", height = 5, width = 15)
