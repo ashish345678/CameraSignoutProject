@@ -1,4 +1,5 @@
-from tkinter import*
+from tkinter import *
+from tkinter.ttk import *
 
 # Tkinter page
 root = Tk()
@@ -22,8 +23,11 @@ Report.place(x = 450, y = 300)
 root.mainloop()
 
 def signout():
+    while
     pass
 def returncamera():
     pass
-def report():
+def returncamera():
     pass
+
+
