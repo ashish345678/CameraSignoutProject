@@ -29,5 +29,5 @@ def returncamera():
     pass
 def returncamera():
     pass
-
-
+def report():
+    pass
