@@ -29,7 +29,7 @@ rebel = 3
 nikon = 3
 
 #buttons 
-SignOut = Button(root, text="Sign out", height = 5, width = 15)
+SignOut = Button(root, text="Sign out", command = signoutWindow)
 SignOut.place(x = 280, y = 300)
 SignOut.configure(bg="aquamarine")
 
