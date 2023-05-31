@@ -5,7 +5,7 @@ root = Tk()
 root.geometry("700x700")
 root.title("camera sign out sheet")
 
-
+label = Label(root, text="Camera Sign Out")
 rebel = 3
 nikon = 3
 SignOut = Button(root, text="Sign out", height = 5, width = 15)
