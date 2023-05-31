@@ -22,16 +22,8 @@ Report.place(x = 450, y = 300)
 root.mainloop()
 
 def signout():
-<<<<<<< HEAD
-
-
-def returncamera():
-
-    
-=======
     pass
 def returncamera():
     pass
->>>>>>> 308af8d2655404302a21b8c96f83b1a0ec4c560b
 def report():
     pass
