@@ -20,3 +20,9 @@ Report.place(x = 450, y = 300)
 
 
 root.mainloop()
+
+def signout():
+
+def returncamera():
+
+def report():
