@@ -5,7 +5,7 @@ root = Tk()
 root.geometry("700x700")
 root.title("camera sign out sheet")
 
-
+label = Label(root, text="Camera Sign Out")
 rebel = 3
 nikon = 3
 SignOut = Button(root, text="Sign out", height = 5, width = 15)
@@ -22,9 +22,16 @@ Report.place(x = 450, y = 300)
 root.mainloop()
 
 def signout():
+<<<<<<< HEAD
 
 
 def returncamera():
 
     
+=======
+    pass
+def returncamera():
+    pass
+>>>>>>> 308af8d2655404302a21b8c96f83b1a0ec4c560b
 def report():
+    pass
