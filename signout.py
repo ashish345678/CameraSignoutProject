@@ -23,6 +23,8 @@ root.mainloop()
 
 def signout():
 
+
 def returncamera():
 
+    
 def report():
