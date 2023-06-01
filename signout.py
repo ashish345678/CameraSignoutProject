@@ -13,21 +13,30 @@ def signoutWindow():
     newWindow = Toplevel(root)          
     newWindow.geometry("700x700")       # Sets the geometry of the new window
     newWindow.configure(bg="beige")
-    Label(newWindow, text="This page is for signing out cameras").pack()      # Packs the new window and gives it a label
+    text = Text(newWindow, height=1)
+    text.pack()
+    text.place(y=600)
+    text.insert("1.0", "This page is for signing out cameras")
 
 def returnWindow():
     # Opens the window that is for returning cameras
     newWindow = Toplevel(root)          
     newWindow.geometry("700x700")       # Sets the geometry of the new window
     newWindow.configure(bg="beige")
-    Label(newWindow, text="This page is for returning cameras").pack()      # Packs the new window and gives it a label
+    text = Text(newWindow, height=1)
+    text.pack()
+    text.place(y=600)
+    text.insert("1.0", "This page is for returning cameras")
 
 def reportWindow():
     # Opens the window that is for reporting damaged cameras
     newWindow = Toplevel(root)          
     newWindow.geometry("700x700")       # Sets the geometry of the new window
     newWindow.configure(bg="beige")
-    Label(newWindow, text="This page is for reporting damaged cameras").pack()      # Packs the new window and gives it a label
+    text = Text(newWindow, height=1)
+    text.pack()
+    text.place(y=600)
+    text.insert("1.0", "This page is for reporting damaged cameras")
 
 rebel = 3
 nikon = 3
