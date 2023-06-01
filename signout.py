@@ -5,6 +5,7 @@ from tkinter.ttk import*
 root = Tk()
 root.geometry("700x700")
 root.title("camera sign out sheet")
+label = Label(root, text="Camera Sign Out")
 root.configure(bg="beige")
 label = Label(root, text="Camera signout")
 
