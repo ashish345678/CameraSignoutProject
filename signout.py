@@ -7,6 +7,7 @@ root.geometry("700x700")
 root.title("camera sign out sheet")
 label = Label(root, text="Camera Sign Out")
 root.configure(bg="beige")
+label = Label(root, text="Camera signout")
 
 def signoutWindow():
     # Opens the window that is for signing out cameras
