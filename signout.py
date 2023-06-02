@@ -36,7 +36,7 @@ def returnWindow():
     newWindow.configure(bg="beige")
     text = Text(newWindow, height=1, width=34)
     text.pack()
-    text.place(y=600)
+    text.place(y=1)
     text.insert("1.0", "This page is for returning cameras")
 
 def reportWindow():
@@ -46,7 +46,7 @@ def reportWindow():
     newWindow.configure(bg="beige")
     text = Text(newWindow, height=1, width=42)
     text.pack()
-    text.place(y=600)
+    text.place(y=1)
     text.insert("1.0", "This page is for reporting damaged cameras")
     #reportImage = Image.open("<downloads/camera.JPEG>")
 
