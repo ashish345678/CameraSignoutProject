@@ -1,5 +1,6 @@
 from tkinter import*
 from tkinter.ttk import*
+from PIL import ImageTk, Image
 
 # Tkinter page
 root = Tk()
@@ -38,6 +39,7 @@ def reportWindow():
     text.pack()
     text.place(x=175, y=10)
     text.insert("1.0", "This page is for reporting damaged cameras")
+    #reportImage = Image.open("<downloads/camera.JPEG>")
 
 rebel = 3
 nikon = 3
