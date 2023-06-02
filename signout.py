@@ -1,5 +1,6 @@
 from tkinter import*
 from tkinter.ttk import*
+from PIL import ImageTk, Image
 
 # Tkinter page
 root = Tk()
@@ -20,9 +21,10 @@ def signoutWindow():
     newWindow = Toplevel(root)          
     newWindow.geometry("700x700")       # Sets the geometry of the new window
     newWindow.configure(bg="beige")
-    text = Text(newWindow, height=1)
+    text = Text(newWindow, height=1, width=36)
     text.pack()
     text.place(y=1)
+    text.place(x=190, y=10)
     text.insert("1.0", "This page is for signing out cameras")
     cam = Button(newWindow, text = "press to sign out")
     cam.place(x = 280, y = 300)
@@ -32,9 +34,9 @@ def returnWindow():
     newWindow = Toplevel(root)          
     newWindow.geometry("700x700")       # Sets the geometry of the new window
     newWindow.configure(bg="beige")
-    text = Text(newWindow, height=1)
+    text = Text(newWindow, height=1, width=34)
     text.pack()
-    text.place(y=1)
+    text.place(y=600)
     text.insert("1.0", "This page is for returning cameras")
 
 def reportWindow():
@@ -42,10 +44,11 @@ def reportWindow():
     newWindow = Toplevel(root)          
     newWindow.geometry("700x700")       # Sets the geometry of the new window
     newWindow.configure(bg="beige")
-    text = Text(newWindow, height=1)
+    text = Text(newWindow, height=1, width=42)
     text.pack()
-    text.place(y=1)
+    text.place(y=600)
     text.insert("1.0", "This page is for reporting damaged cameras")
+    #reportImage = Image.open("<downloads/camera.JPEG>")
 
 
 SignOut = Button(root, text="Sign out", command = signoutWindow)
