@@ -8,6 +8,12 @@ root.title("camera sign out sheet")
 label = Label(root, text="Camera Sign Out")
 root.configure(bg="beige")
 label = Label(root, text="Camera signout")
+nikSignout = 3
+rebSignout = 3
+nikReturn = 0
+rebReturn = 0
+nikRepair = 0
+nikReturn = 0
 
 def signoutWindow():
     # Opens the window that is for signing out cameras
@@ -16,8 +22,10 @@ def signoutWindow():
     newWindow.configure(bg="beige")
     text = Text(newWindow, height=1)
     text.pack()
-    text.place(y=600)
+    text.place(y=1)
     text.insert("1.0", "This page is for signing out cameras")
+    cam = Button(newWindow, text = "press to sign out")
+    cam.place(x = 280, y = 300)
 
 def returnWindow():
     # Opens the window that is for returning cameras
@@ -26,7 +34,7 @@ def returnWindow():
     newWindow.configure(bg="beige")
     text = Text(newWindow, height=1)
     text.pack()
-    text.place(y=600)
+    text.place(y=1)
     text.insert("1.0", "This page is for returning cameras")
 
 def reportWindow():
@@ -36,13 +44,13 @@ def reportWindow():
     newWindow.configure(bg="beige")
     text = Text(newWindow, height=1)
     text.pack()
-    text.place(y=600)
+    text.place(y=1)
     text.insert("1.0", "This page is for reporting damaged cameras")
 
-rebel = 3
-nikon = 3
-SignOut = Button(root, text="Sign out", command=signoutWindow)
+
+SignOut = Button(root, text="Sign out", command = signoutWindow)
 SignOut.place(x = 280, y = 300)
+
 
 
 Return = Button(root, text="return", command=returnWindow)
