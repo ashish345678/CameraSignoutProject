@@ -1,6 +1,6 @@
 from tkinter import*
 from tkinter.ttk import*
-from PIL import ImageTk, Image
+from PIL import Image
 
 # Tkinter page
 root = Tk()
@@ -15,6 +15,7 @@ nikReturn = 0
 rebReturn = 0
 nikRepair = 0
 nikReturn = 0
+im1 = Image.open(r"C:\Users\Vsubramanyam\Downloads\20210511_132009.jpg")
 
 def signoutWindow():
     # Opens the window that is for signing out cameras
@@ -28,6 +29,7 @@ def signoutWindow():
     text.insert("1.0", "This page is for signing out cameras")
     cam = Button(newWindow, text = "press to sign out")
     cam.place(x = 280, y = 300)
+    cam2 = Button(newWindow, text = "press to sign out"); 
 
 def returnWindow():
     # Opens the window that is for returning cameras
