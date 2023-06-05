@@ -15,7 +15,7 @@ nikReturn = 0
 rebReturn = 0
 nikRepair = 0
 rebRepair = 0
-im1 = Image.open(r"C:\Users\Vsubramanyam\Downloads\20210511_132009.jpg")
+#im1 = Image.open(r"C:\Users\Vsubramanyam\Downloads\20210511_132009.jpg")
 
 def signoutWindow():
     # Opens the window that is for signing out cameras
