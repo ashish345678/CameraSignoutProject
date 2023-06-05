@@ -44,12 +44,12 @@ def returnWindow():
     nikonReturn = Button(newWindow, text="Return")
     nikonReturn.pack()
     nik = Text(newWindow, height=1)
-    nik.insert("1.0", "Nikon", str(nikReturn))
+    nik.insert("1.0", "Nikon", str(nikReturn), state = DISABLED)
     nik.pack()
     rebelReturn = Button(newWindow, text="Return")
     rebelReturn.pack()
     reb = Text(newWindow, height=1)
-    reb.insert("1.0", "Rebel", str(rebReturn))
+    reb.insert("1.0", "Rebel", str(rebReturn), state = DISABLED)
     reb.pack()
 def reportWindow():
     # Opens the window that is for reporting damaged cameras
