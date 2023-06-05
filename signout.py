@@ -28,8 +28,9 @@ def signoutWindow():
     text.place(x=190, y=10)
     text.insert("1.0", "This page is for signing out cameras")
     cam = Button(newWindow, text = "press to sign out")
-    cam.place(x = 280, y = 300)
+    cam.place(x = 280, y = 330)
     cam2 = Button(newWindow, text = "press to sign out"); 
+    cam2.place(x = 280, y = 260)
 
 def returnWindow():
     # Opens the window that is for returning cameras
