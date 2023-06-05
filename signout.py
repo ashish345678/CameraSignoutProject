@@ -14,7 +14,7 @@ rebSignout = 3
 nikReturn = 0
 rebReturn = 0
 nikRepair = 0
-nikReturn = 0
+rebRepair = 0
 #im1 = Image.open(r"C:\Users\Vsubramanyam\Downloads\20210511_132009.jpg")
 
 def signoutWindow():
@@ -28,8 +28,9 @@ def signoutWindow():
     text.place(x=190, y=10)
     text.insert("1.0", "This page is for signing out cameras")
     cam = Button(newWindow, text = "press to sign out")
-    cam.place(x = 280, y = 300)
+    cam.place(x = 280, y = 330)
     cam2 = Button(newWindow, text = "press to sign out"); 
+    cam2.place(x = 280, y = 260)
 
 def returnWindow():
     # Opens the window that is for returning cameras
@@ -40,6 +41,16 @@ def returnWindow():
     text.pack()
     text.place(y=1)
     text.insert("1.0", "This page is for returning cameras")
+    nikonReturn = Button(newWindow, text="Return")
+    nikonReturn.pack()
+    nik = Text(newWindow, height=1)
+    nik.insert("1.0", "Nikon", str(nikReturn), state = DISABLED)
+    nik.pack()
+    rebelReturn = Button(newWindow, text="Return")
+    rebelReturn.pack()
+    reb = Text(newWindow, height=1)
+    reb.insert("1.0", "Rebel", str(rebReturn), state = DISABLED)
+    reb.pack()
 def reportWindow():
     # Opens the window that is for reporting damaged cameras
     newWindow = Toplevel(root)          
@@ -49,6 +60,16 @@ def reportWindow():
     text.pack()
     text.place(y=1)
     text.insert("1.0", "This page is for reporting damaged cameras")
+    nikonReport = Button(newWindow, text="Report")
+    nikonReport.pack()
+    nik = Text(newWindow, height=1)
+    nik.insert("1.0", "Nikon", str(nikRepair))
+    nik.pack()
+    rebelReport = Button(newWindow, text="Report")
+    rebelReport.pack()
+    reb = Text(newWindow, height=1)
+    reb.insert("1.0", "Rebel", str(rebRepair))
+    reb.pack()
     #reportImage = Image.open("<downloads/camera.JPEG>")
 
 
