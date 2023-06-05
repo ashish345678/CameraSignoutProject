@@ -1,6 +1,6 @@
 from tkinter import*
 from tkinter.ttk import*
-from PIL import Image
+# from PIL import Image
 
 # Tkinter page
 root = Tk()
@@ -15,7 +15,7 @@ nikReturn = 0
 rebReturn = 0
 nikRepair = 0
 nikReturn = 0
-im1 = Image.open(r"C:\Users\Vsubramanyam\Downloads\20210511_132009.jpg")
+#im1 = Image.open(r"C:\Users\Vsubramanyam\Downloads\20210511_132009.jpg")
 
 def signoutWindow():
     # Opens the window that is for signing out cameras
