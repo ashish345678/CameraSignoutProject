@@ -1,6 +1,6 @@
 from tkinter import*
 from tkinter.ttk import*
-from PIL import Image
+# from PIL import Image
 
 # Tkinter page
 root = Tk()
