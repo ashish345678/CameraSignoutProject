@@ -1,1 +1,10 @@
-from tkinter.ttk import*
+from tkinter import *
+root = Tk()
+newWindow = Toplevel(root)          
+newWindow.geometry("700x700")      
+newWindow.configure(bg="beige")
+text = Text(newWindow, height=1, width=36)
+photo = PhotoImage(file="Rebel T6i.jpeg")
+label = Label(root, image=photo)
+label.pack()
+root.mainloop()

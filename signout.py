@@ -28,7 +28,6 @@ def returnWindow():
     text.pack()
     text.place(x=200, y=10)
     text.insert("1.0", "This page is for returning cameras")
-
 def reportWindow():
     # Opens the window that is for reporting damaged cameras
     newWindow = Toplevel(root)          
