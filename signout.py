@@ -23,20 +23,16 @@ def signoutWindow():
     newWindow = Toplevel(root)          
     newWindow.geometry("700x700")       # Sets the geometry of the new window
     newWindow.configure(bg="beige")
-    def nikEmailWindow():
-        newEmailWindow = Toplevel(newWindow)
-        newEmailWindow.geometry("700x700")
-        newEmailWindow.configure(bg="beige")
-    def rebEmailWindow():
-        newEmailWindow = Toplevel(newWindow)
-        newEmailWindow.geometry("700x700")
-        newEmailWindow.configure(bg="beige")
     text = Text(newWindow, height=1, width=36)
     text.pack()
     text.place(y=1)
     text.place(x=190, y=10)
     text.insert("1.0", "This page is for signing out cameras")
     text.config(state=DISABLED)
+    def nikEmailWindow():
+        newEmailWindow = Toplevel(newWindow)
+        newEmailWindow.geometry("700x700")
+        newEmailWindow.configure(bg="beige")
     cam = Button(newWindow, text = "press to sign out", command=nikEmailWindow())
     cam.place(x = 280, y = 260)
     nik = Text(newWindow, height=1, width=7)
@@ -44,11 +40,14 @@ def signoutWindow():
     #nik.place(x = 280, y = 295)
     nik.config(state=DISABLED)
     nik.place(x = 380, y =  260)
+    def rebEmailWindow():
+        newEmailWindow = Toplevel(newWindow)
+        newEmailWindow.geometry("700x700")
+        newEmailWindow.configure(bg="beige")
     cam2 = Button(newWindow, text = "press to sign out", command=rebEmailWindow()) 
     cam2.place(x = 280, y = 330)
     reb = Text(newWindow, height=1, width=7)
     reb.insert("1.0", ("Rebel", rebSignout))
-
     reb.config(state = DISABLED)
     reb.place(x= 380, y = 330)
 
