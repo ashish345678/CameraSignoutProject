@@ -17,24 +17,33 @@ nikRepair = 0
 rebRepair = 0
 #im1 = Image.open(r"C:\Users\Vsubramanyam\Downloads\20210511_132009.jpg")
 
+
 def signoutWindow():
     # Opens the window that is for signing out cameras
     newWindow = Toplevel(root)          
     newWindow.geometry("700x700")       # Sets the geometry of the new window
     newWindow.configure(bg="beige")
+    def nikEmailWindow():
+        newEmailWindow = Toplevel(newWindow)
+        newEmailWindow.geometry("700x700")
+        newEmailWindow.configure(bg="beige")
+    def rebEmailWindow():
+        newEmailWindow = Toplevel(newWindow)
+        newEmailWindow.geometry("700x700")
+        newEmailWindow.configure(bg="beige")
     text = Text(newWindow, height=1, width=36)
     text.pack()
     text.place(y=1)
     text.place(x=190, y=10)
     text.insert("1.0", "This page is for signing out cameras")
-    cam = Button(newWindow, text = "press to sign out")
+    cam = Button(newWindow, text = "press to sign out", command=nikEmailWindow())
     cam.place(x = 280, y = 260)
     nik = Text(newWindow, height=1, width=7)
     nik.insert("1.0", ("Nikon", nikSignout))
     #nik.place(x = 280, y = 295)
     nik.config(state=DISABLED)
     nik.place(x = 380, y =  260)
-    cam2 = Button(newWindow, text = "press to sign out"); 
+    cam2 = Button(newWindow, text = "press to sign out", command=rebEmailWindow()) 
     cam2.place(x = 280, y = 330)
     reb = Text(newWindow, height=1, width=7)
     reb.insert("1.0", ("Rebel", rebSignout))
