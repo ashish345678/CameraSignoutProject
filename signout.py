@@ -30,15 +30,15 @@ def signoutWindow():
     cam = Button(newWindow, text = "press to sign out")
     cam.place(x = 280, y = 260)
     nik = Text(newWindow, height=1, width=7)
-    nik.insert("1.0", "Nikon", str(nikSignout))
+    nik.insert("1.0", ("Nikon", nikSignout))
     #nik.place(x = 280, y = 295)
     nik.config(state=DISABLED)
     nik.place(x = 380, y =  260)
     cam2 = Button(newWindow, text = "press to sign out"); 
     cam2.place(x = 280, y = 330)
     reb = Text(newWindow, height=1, width=7)
-    reb.insert("1.0", "Rebel", str(rebSignout))
-    
+    reb.insert("1.0", ("Rebel", rebSignout))
+
     reb.config(state = DISABLED)
     reb.place(x= 380, y = 330)
 
