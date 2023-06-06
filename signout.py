@@ -6,9 +6,9 @@ from tkinter.ttk import*
 root = Tk()
 root.geometry("700x700")
 root.title("camera sign out sheet")
-label = Label(root, text="Camera Sign Out")
+label = Label(root, text="Camera Sign Out", font = ('ariel', 22))
 root.configure(bg="beige")
-label = Label(root, text="Camera signout")
+label.place(x = 220 , y=40)
 nikSignout = 3
 rebSignout = 3
 nikReturn = 0
@@ -36,6 +36,7 @@ def signoutWindow():
     text.place(y=1)
     text.place(x=190, y=10)
     text.insert("1.0", "This page is for signing out cameras")
+    text.config(state=DISABLED)
     cam = Button(newWindow, text = "press to sign out", command=nikEmailWindow())
     cam.place(x = 280, y = 260)
     nik = Text(newWindow, height=1, width=7)
@@ -62,6 +63,7 @@ def returnWindow():
     text.place(y=1)
     text.place(x=190, y=10)
     text.insert("1.0", "This page is for returning cameras")
+    text.config(state=DISABLED)
     nikonReturn = Button(newWindow, text="Return")
     nikonReturn.place(x=280, y=260)
     nik = Text(newWindow, height=1, width=7)
@@ -81,8 +83,9 @@ def reportWindow():
     newWindow.configure(bg="beige")
     text = Text(newWindow, height=1, width=42)
     text.pack()
-    text.place(y=1)
+    text.place(x=190, y=10)
     text.insert("1.0", "This page is for reporting damaged cameras")
+    text.config(state=DISABLED)
     nikonReport = Button(newWindow, text="Report")
     nikonReport.place(x=280, y=260)
     nik = Text(newWindow, height=1, width=7)
