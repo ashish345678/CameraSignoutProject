@@ -28,9 +28,20 @@ def signoutWindow():
     text.place(x=190, y=10)
     text.insert("1.0", "This page is for signing out cameras")
     cam = Button(newWindow, text = "press to sign out")
-    cam.place(x = 280, y = 330)
+    cam.place(x = 280, y = 260)
+    nik = Text(newWindow, height=1)
+    nik.insert("1.0", "Nikon", str(nikSignout))
+    #nik.place(x = 280, y = 295)
+    nik.config(state=DISABLED)
+    nik.place(x = 380, y =  260)
     cam2 = Button(newWindow, text = "press to sign out"); 
-    cam2.place(x = 280, y = 260)
+    cam2.place(x = 280, y = 330)
+    reb = Text(newWindow, height=1)
+    reb.insert("1.0", "Rebel", str(rebSignout))
+    
+    reb.config(state = DISABLED)
+    reb.place(x= 380, y = 330)
+
 
 def returnWindow():
     # Opens the window that is for returning cameras
@@ -42,14 +53,16 @@ def returnWindow():
     text.place(y=1)
     text.insert("1.0", "This page is for returning cameras")
     nikonReturn = Button(newWindow, text="Return")
-    nikonReturn.pack()
+    nikonReturn.place()
     nik = Text(newWindow, height=1)
-    nik.insert("1.0", "Nikon", str(nikReturn), state = DISABLED)
+    nik.insert("1.0", "Nikon", str(nikReturn))
+    nik.config(state = DISABLED)
     nik.pack()
     rebelReturn = Button(newWindow, text="Return")
     rebelReturn.pack()
     reb = Text(newWindow, height=1)
-    reb.insert("1.0", "Rebel", str(rebReturn), state = DISABLED)
+    reb.insert("1.0", "Rebel", str(rebReturn))
+    reb.config(state = DISABLED)
     reb.pack()
 def reportWindow():
     # Opens the window that is for reporting damaged cameras
@@ -64,11 +77,13 @@ def reportWindow():
     nikonReport.pack()
     nik = Text(newWindow, height=1)
     nik.insert("1.0", "Nikon", str(nikRepair))
+    nik.config(state = DISABLED)
     nik.pack()
     rebelReport = Button(newWindow, text="Report")
     rebelReport.pack()
     reb = Text(newWindow, height=1)
     reb.insert("1.0", "Rebel", str(rebRepair))
+    reb.config(state = DISABLED)
     reb.pack()
     #reportImage = Image.open("<downloads/camera.JPEG>")
 
