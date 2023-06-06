@@ -58,7 +58,6 @@ def returnWindow():
     nikonReturn.pack()
     nik = Text(newWindow, height=1, width=7)
     nik.place(x = 280, y = 260)
-    nik.place(x = 280, y = 260)
     nik.insert("1.0", "Nikon", str(nikReturn))
     nik.config(state = DISABLED)
     nik.pack()
