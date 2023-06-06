@@ -48,9 +48,9 @@ def returnWindow():
     newWindow = Toplevel(root)          
     newWindow.geometry("700x700")       # Sets the geometry of the new window
     newWindow.configure(bg="beige")
-    text = Text(newWindow, height=1, width=34)
+    text = Text(newWindow, height=1, width=36)
     text.pack()
-    text.place(y=1)
+    text.place(x=280, y=10)
     text.insert("1.0", "This page is for returning cameras")
     nikonReturn = Button(newWindow, text="Return")
     nikonReturn.place(x=335)
