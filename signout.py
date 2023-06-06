@@ -6,9 +6,9 @@ from tkinter.ttk import*
 root = Tk()
 root.geometry("700x700")
 root.title("camera sign out sheet")
-label = Label(root, text="Camera Sign Out")
+label = Label(root, text="Camera Sign Out", font = ('ariel', 22))
 root.configure(bg="beige")
-label = Label(root, text="Camera signout")
+label.place(x = 220 , y=40)
 nikSignout = 3
 rebSignout = 3
 nikReturn = 0
