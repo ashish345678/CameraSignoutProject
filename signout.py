@@ -28,14 +28,14 @@ def signoutWindow():
     text.place(x=190, y=10)
     text.insert("1.0", "This page is for signing out cameras")
     text.config(state=DISABLED)
-    cam = Button(newWindow, text = "press to sign out")
+    cam = Button(newWindow, text = "press to sign out") # When clicked creates a new window 
     cam.place(x = 280, y = 260)
     nik = Text(newWindow, height=1, width=7)
     nik.insert("1.0", ("Nikon", nikSignout))
     #nik.place(x = 280, y = 295)
     nik.config(state=DISABLED)
     nik.place(x = 380, y =  260)
-    cam2 = Button(newWindow, text = "press to sign out"); 
+    cam2 = Button(newWindow, text = "press to sign out") # When clicked creates a new window 
     cam2.place(x = 280, y = 330)
     reb = Text(newWindow, height=1, width=7)
     reb.insert("1.0", ("Rebel", rebSignout))
@@ -54,14 +54,14 @@ def returnWindow():
     text.place(y=1)
     text.place(x=190, y=10)
     text.insert("1.0", "This page is for returning cameras")
-    text.config(state=DISABLED)
-    nikonReturn = Button(newWindow, text="Return")
+    text.config(state=DISABLED) 
+    nikonReturn = Button(newWindow, text="Return") # When clicked creates a new window 
     nikonReturn.place(x=280, y=260)
     nik = Text(newWindow, height=1, width=7)
     nik.place(x=360, y=260)
     nik.insert("1.0", ("Nikon", nikReturn))
     nik.config(state = DISABLED)
-    rebelReturn = Button(newWindow, text="Return")
+    rebelReturn = Button(newWindow, text="Return") # When clicked creates a new window 
     rebelReturn.place(x=280, y=330)
     reb = Text(newWindow, height=1, width=7)
     reb.place(x=360, y=330)
@@ -77,13 +77,13 @@ def reportWindow():
     text.place(x=190, y=10)
     text.insert("1.0", "This page is for reporting damaged cameras")
     text.config(state=DISABLED)
-    nikonReport = Button(newWindow, text="Report")
+    nikonReport = Button(newWindow, text="Report") # When clicked creates a new window 
     nikonReport.place(x=280, y=260)
     nik = Text(newWindow, height=1, width=7)
     nik.insert("1.0", ("Nikon", nikRepair))
     nik.place(x=360, y=260)
     nik.config(state = DISABLED)
-    rebelReport = Button(newWindow, text="Report")
+    rebelReport = Button(newWindow, text="Report") # When clicked creates a new window 
     rebelReport.place(x=280, y=330)
     reb = Text(newWindow, height=1, width=7)
     reb.insert("1.0", ("Rebel",rebRepair))
