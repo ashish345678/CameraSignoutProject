@@ -74,7 +74,7 @@ def reportWindow():
     newWindow.configure(bg="beige")
     text = Text(newWindow, height=1, width=42)
     text.pack()
-    text.place(y=1)
+    text.place(x=190, y=10)
     text.insert("1.0", "This page is for reporting damaged cameras")
     text.config(state=DISABLED)
     nikonReport = Button(newWindow, text="Report")
