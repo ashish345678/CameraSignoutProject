@@ -28,8 +28,20 @@ def signoutWindow():
     text.place(x=190, y=10)
     text.insert("1.0", "This page is for signing out cameras")
     cam = Button(newWindow, text = "press to sign out")
-    cam.place(x = 280, y = 300)
+    cam.place(x = 280, y = 260)
+    nik = Text(newWindow, height=1)
+    nik.insert("1.0", "Nikon", str(nikSignout))
+    #nik.place(x = 280, y = 295)
+    nik.config(state=DISABLED)
+    nik.place(x = 380, y =  260)
     cam2 = Button(newWindow, text = "press to sign out"); 
+    cam2.place(x = 280, y = 330)
+    reb = Text(newWindow, height=1)
+    reb.insert("1.0", "Rebel", str(rebSignout))
+    
+    reb.config(state = DISABLED)
+    reb.place(x= 380, y = 330)
+
 
 def returnWindow():
     # Opens the window that is for returning cameras
@@ -46,6 +58,10 @@ def returnWindow():
     nik = Text(newWindow, height=1, width=7)
     nik.insert("1.0", "Nikon")
     nik.place(x=345)
+    nikonReturn.place()
+    nik = Text(newWindow, height=1)
+    nik.insert("1.0", "Nikon", str(nikReturn))
+    nik.config(state = DISABLED)
     nik.pack()
     rebelReturn = Button(newWindow, text="Return")
     rebelReturn.place(x=335)
@@ -53,6 +69,7 @@ def returnWindow():
     reb = Text(newWindow, height=1, width=7)
     reb.place(x=345)
     reb.insert("1.0", "Rebel", str(rebReturn))
+    reb.config(state = DISABLED)
     reb.pack()
 def reportWindow():
     # Opens the window that is for reporting damaged cameras
@@ -69,6 +86,7 @@ def reportWindow():
     nik = Text(newWindow, height=1, width=7)
     nik.insert("1.0", "Nikon", str(nikRepair))
     nik.place(x=345)
+    nik.config(state = DISABLED)
     nik.pack()
     rebelReport = Button(newWindow, text="Report")
     rebelReport.place(x=335)
@@ -76,6 +94,7 @@ def reportWindow():
     reb = Text(newWindow, height=1, width=7)
     reb.insert("1.0", "Rebel", str(rebRepair))
     reb.place(x=345)
+    reb.config(state = DISABLED)
     reb.pack()
     #reportImage = Image.open("<downloads/camera.JPEG>")
 
@@ -83,7 +102,7 @@ def reportWindow():
 SignOut = Button(root, text="Sign out", command = signoutWindow)
 SignOut.place(x = 280, y = 300)
 
-
+print("Ashish says you need to set a password;")
 
 Return = Button(root, text="return", command=returnWindow)
 Return.place(x = 100, y = 300)
