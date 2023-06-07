@@ -33,7 +33,15 @@ def signoutWindow():
         newEmailWindow = Toplevel(newWindow)
         newEmailWindow.geometry("700x700")
         newEmailWindow.configure(bg="beige")
-    cam = Button(newWindow, text = "press to sign out", command=nikEmailWindow())
+        print(nikSignout)
+        '''
+        if nikSignout == 0:
+            nope = Label(newEmailWindow, text = "rebel ran out")
+        else:
+            nikSignout = nikSignout - 1
+            nikReturn = nikReturn + 1
+        '''
+    cam = Button(newWindow, text = "press to sign out", command = lambda: nikEmailWindow())
     cam.place(x = 280, y = 260)
     nik = Text(newWindow, height=1, width=7)
     nik.insert("1.0", ("Nikon", nikSignout))
@@ -44,7 +52,14 @@ def signoutWindow():
         newEmailWindow = Toplevel(newWindow)
         newEmailWindow.geometry("700x700")
         newEmailWindow.configure(bg="beige")
-    cam2 = Button(newWindow, text = "press to sign out", command=rebEmailWindow()) 
+        '''
+        if rebSignout == 0:
+            nope = Label(newEmailWindow, text = "rebel ran out")
+        else:
+            rebSignout = rebSignout - 1
+            rebReturn = rebReturn + 1
+        '''
+    cam2 = Button(newWindow, text = "press to sign out", command = lambda:rebEmailWindow())
     cam2.place(x = 280, y = 330)
     reb = Text(newWindow, height=1, width=7)
     reb.insert("1.0", ("Rebel", rebSignout))
