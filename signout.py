@@ -33,15 +33,7 @@ def signoutWindow():
         newEmailWindow = Toplevel(newWindow)
         newEmailWindow.geometry("700x700")
         newEmailWindow.configure(bg="beige")
-        print(nikSignout)
-        '''
-        if nikSignout == 0:
-            nope = Label(newEmailWindow, text = "rebel ran out")
-        else:
-            nikSignout = nikSignout - 1
-            nikReturn = nikReturn + 1
-        '''
-    cam = Button(newWindow, text = "press to sign out", command = lambda: nikEmailWindow())
+    cam = Button(newWindow, text = "press to sign out", command=lambda: nikEmailWindow())
     cam.place(x = 280, y = 260)
     nik = Text(newWindow, height=1, width=7)
     nik.insert("1.0", ("Nikon", nikSignout))
@@ -52,14 +44,7 @@ def signoutWindow():
         newEmailWindow = Toplevel(newWindow)
         newEmailWindow.geometry("700x700")
         newEmailWindow.configure(bg="beige")
-        '''
-        if rebSignout == 0:
-            nope = Label(newEmailWindow, text = "rebel ran out")
-        else:
-            rebSignout = rebSignout - 1
-            rebReturn = rebReturn + 1
-        '''
-    cam2 = Button(newWindow, text = "press to sign out", command = lambda:rebEmailWindow())
+    cam2 = Button(newWindow, text = "press to sign out", command=lambda: rebEmailWindow()) 
     cam2.place(x = 280, y = 330)
     reb = Text(newWindow, height=1, width=7)
     reb.insert("1.0", ("Rebel", rebSignout))
@@ -79,15 +64,23 @@ def returnWindow():
     text.place(x=190, y=10)
     text.insert("1.0", "This page is for returning cameras")
     text.config(state=DISABLED)
+    def nikEmailWindow():
+        newEmailWindow = Toplevel(newWindow)
+        newEmailWindow.geometry("700x700")
+        newEmailWindow.configure(bg="beige")
     #to return a nikon
-    nikonReturn = Button(newWindow, text="Return")
+    nikonReturn = Button(newWindow, text="Return", command=lambda: nikEmailWindow)
     nikonReturn.place(x=280, y=260)
     nik = Text(newWindow, height=1, width=7)
     nik.place(x=360, y=260)
     nik.insert("1.0", ("Nikon", nikReturn))
     nik.config(state = DISABLED)
+    def rebEmailWindow():
+        newEmailWindow = Toplevel(newWindow)
+        newEmailWindow.geometry("700x700")
+        newEmailWindow.configure(bg="beige")
     #button to return a rebel
-    rebelReturn = Button(newWindow, text="Return")
+    rebelReturn = Button(newWindow, text="Return", command=lambda: rebEmailWindow())
     rebelReturn.place(x=280, y=330)
     reb = Text(newWindow, height=1, width=7)
     reb.place(x=360, y=330)
@@ -104,15 +97,23 @@ def reportWindow():
     text.place(x=190, y=10)
     text.insert("1.0", "This page is for reporting damaged cameras")
     text.config(state=DISABLED)
+    def nikEmailWindow():
+        newEmailWindow = Toplevel(newWindow)
+        newEmailWindow.geometry("700x700")
+        newEmailWindow.configure(bg="beige")
     #Button to report a nikon
-    nikonReport = Button(newWindow, text="Report")
+    nikonReport = Button(newWindow, text="Report", command=lambda: nikEmailWindow())
     nikonReport.place(x=280, y=260)
     nik = Text(newWindow, height=1, width=7)
     nik.insert("1.0", ("Nikon", nikRepair))
     nik.place(x=360, y=260)
     nik.config(state = DISABLED)
+    def rebEmailWindow():
+        newEmailWindow = Toplevel(newWindow)
+        newEmailWindow.geometry("700x700")
+        newEmailWindow.configure(bg="beige")
     #button to report a rebel
-    rebelReport = Button(newWindow, text="Report")
+    rebelReport = Button(newWindow, text="Report", command=lambda: rebEmailWindow())
     rebelReport.place(x=280, y=330)
     reb = Text(newWindow, height=1, width=7)
     reb.insert("1.0", ("Rebel",rebRepair))
