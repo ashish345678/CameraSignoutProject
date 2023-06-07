@@ -86,6 +86,8 @@ def returnWindow():
     reb.place(x=360, y=330)
     reb.insert("1.0", ("Rebel", rebReturn))
     reb.config(state = DISABLED)
+
+
 def reportWindow():
     # Opens the window that is for reporting damaged cameras
     newWindow = Toplevel(root)          
