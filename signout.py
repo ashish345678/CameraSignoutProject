@@ -1,5 +1,6 @@
 from tkinter import*
 from tkinter.ttk import*
+import random
 # from PIL import Image
 
 # Tkinter page
@@ -29,36 +30,38 @@ def signoutWindow():
     text.place(x=190, y=10)
     text.insert("1.0", "This page is for signing out cameras")
     text.config(state=DISABLED)
+    #window that opens when nikon is chosen
     def nikEmailWindow():
         newEmailWindow = Toplevel(newWindow)
         newEmailWindow.geometry("700x700")
         newEmailWindow.configure(bg="beige")
-        print(nikSignout)
-        '''
+        global nikSignout 
+        global nikReturn
         if nikSignout == 0:
             nope = Label(newEmailWindow, text = "rebel ran out")
         else:
             nikSignout = nikSignout - 1
             nikReturn = nikReturn + 1
-        '''
+        
     cam = Button(newWindow, text = "press to sign out", command = lambda: nikEmailWindow())
     cam.place(x = 280, y = 260)
     nik = Text(newWindow, height=1, width=7)
     nik.insert("1.0", ("Nikon", nikSignout))
-    #nik.place(x = 280, y = 295)
     nik.config(state=DISABLED)
     nik.place(x = 380, y =  260)
+    #Window that opens when rebel is chosen
     def rebEmailWindow():
         newEmailWindow = Toplevel(newWindow)
         newEmailWindow.geometry("700x700")
         newEmailWindow.configure(bg="beige")
-        '''
+        global rebSignout
+        global rebReturn
         if rebSignout == 0:
             nope = Label(newEmailWindow, text = "rebel ran out")
         else:
             rebSignout = rebSignout - 1
             rebReturn = rebReturn + 1
-        '''
+        
     cam2 = Button(newWindow, text = "press to sign out", command = lambda:rebEmailWindow())
     cam2.place(x = 280, y = 330)
     reb = Text(newWindow, height=1, width=7)
