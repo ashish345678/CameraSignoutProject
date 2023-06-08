@@ -1,6 +1,8 @@
 from tkinter import*
 from tkinter.ttk import*
 import random
+import csv
+import os
 # from PIL import Image
 
 # Tkinter page
