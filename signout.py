@@ -1,6 +1,8 @@
 from tkinter import*
 from tkinter.ttk import*
 import random
+import csv
+import os
 # from PIL import Image
 
 # Tkinter page
@@ -26,9 +28,9 @@ rebRepair = 0
 
 def signoutWindow():
     # Opens the window that is for signing out cameras
-    newWindow = Toplevel(root)          
+    newWindow = Toplevel(root)          # Creates the window and sets it on the top level
     newWindow.geometry("700x700")       # Sets the geometry of the new window
-    newWindow.configure(bg="beige")
+    newWindow.configure(bg="beige")     # Changes the background of the window
     text = Text(newWindow, height=1, width=36)
     text.pack()
     text.place(y=1)
@@ -124,6 +126,8 @@ def returnWindow():
     reb.place(x=360, y=330)
     reb.insert("1.0", ("Rebel", rebReturn))
     reb.config(state = DISABLED)
+
+
 def reportWindow():
     # Opens the window that is for reporting damaged cameras
     newWindow = Toplevel(root)          
@@ -162,8 +166,6 @@ def reportWindow():
 
 SignOut = Button(root, text="Sign out", command = signoutWindow)
 SignOut.place(x = 280, y = 300)
-
-
 
 Return = Button(root, text="return", command=returnWindow)
 Return.place(x = 100, y = 300)
