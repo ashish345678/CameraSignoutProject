@@ -16,9 +16,9 @@ with open('camerastock.csv') as file:
     open = file.read()
     line = open.split()
     
-print(line[6][7])
+print(line)
 nikSignout = int(line[3][6])
-rebSignout = int(line[6][7])
+rebSignout = int(line[6][6])
 nikReturn = 0
 rebReturn = 0
 nikRepair = 0
