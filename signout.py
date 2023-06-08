@@ -138,6 +138,11 @@ def reportWindow():
         newEmailWindow = Toplevel(newWindow)
         newEmailWindow.geometry("700x700")
         newEmailWindow.configure(bg="beige")
+        emailText = Text(nikEmailWindow, height=1, width=19)
+        text.insert("1.0", "What is your email?")
+        text.place(x=190, y=10)
+        text.config(state=DISABLED)
+        text.pack()
     #Button to report a nikon
     nikonReport = Button(newWindow, text="Report", command=lambda: nikEmailWindow())
     nikonReport.place(x=280, y=260)
