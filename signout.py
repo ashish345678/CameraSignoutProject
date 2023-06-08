@@ -160,8 +160,6 @@ def reportWindow():
 SignOut = Button(root, text="Sign out", command = signoutWindow)
 SignOut.place(x = 280, y = 300)
 
-
-
 Return = Button(root, text="return", command=returnWindow)
 Return.place(x = 100, y = 300)
 
