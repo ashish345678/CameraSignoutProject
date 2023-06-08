@@ -12,12 +12,17 @@ root.title("camera sign out sheet")
 label = Label(root, text="Camera Sign Out", font = ('ariel', 22))
 root.configure(bg="beige")
 label.place(x = 220 , y=40)
-nikSignout = 3
-rebSignout = 3
-nikReturn = 0
-rebReturn = 0
-nikRepair = 0
-rebRepair = 0
+with open('camerastock.csv') as file:
+    open = file.read()
+    line = open.split()
+    
+print(line)
+nikSignout = int(line[3][6])
+rebSignout = int(line[6][7])
+nikReturn =  int(line[9][4])
+rebReturn =  int(line[12][4])
+nikRepair =  int(line[13][7])
+rebRepair = int(line[15][7])
 #im1 = Image.open(r"C:\Users\Vsubramanyam\Downloads\20210511_132009.jpg")
 
 
@@ -183,3 +188,4 @@ def returncamera():
 
 def report():
     pass
+file.close()
