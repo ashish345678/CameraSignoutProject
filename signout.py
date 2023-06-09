@@ -118,6 +118,7 @@ def returnWindow():
                 else:
                     nikReturn = nikReturn - 1
                     nikSignout = nikSignout + 1
+                    tkinter.messagebox.showinfo("Received", "Your camera has been returned, Thank you.")
             else:
                 tkinter.messagebox.showinfo("Incorrect Email", "Your email is invalid, please try again.")
         emailText = Text(newEmailWindow, height=1, width=19)
@@ -141,15 +142,16 @@ def returnWindow():
         newEmailWindow.geometry("700x700")
         newEmailWindow.configure(bg="beige")
         def collectEmail():
-            global nikReturn
-            global nikSignout
+            global rebReturn
+            global rebSignout
             emailValue = emailInput.get()
             if "." in emailValue and "@" in emailValue and "gapps" in emailValue:   
-                if nikReturn == 0:
+                if rebReturn == 0:
                     tkinter.messagebox.showinfo("Ran Out", "We have run out of Rebels")
                 else:
-                    nikReturn = nikReturn - 1
-                    nikSignout = nikSignout + 1
+                    rebReturn = rebReturn - 1
+                    rebSignout = rebSignout + 1
+                    tkinter.messagebox.showinfo("Received", "Your camera has been returned, Thank you.")
             else:
                 tkinter.messagebox.showinfo("Incorrect Email", "Your email is invalid, please try again.")
         emailText = Text(newEmailWindow, height=1, width=19)
