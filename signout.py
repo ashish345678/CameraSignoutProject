@@ -105,6 +105,7 @@ def returnWindow():
                 else:
                     nikReturn = nikReturn - 1
                     nikSignout = nikSignout + 1
+                    tkinter.messagebox.showinfo("Received", "Your camera has been returned, Thank you.")
             else:
                 tkinter.messagebox.showinfo("Incorrect Email", "Your email is invalid, please try again.")
         emailText = Text(newEmailWindow, height=1, width=19)
@@ -137,6 +138,7 @@ def returnWindow():
                 else:
                     rebReturn = rebReturn - 1
                     rebSignout = rebSignout + 1
+                    tkinter.messagebox.showinfo("Received", "Your camera has been returned, Thank you.")
             else:
                 tkinter.messagebox.showinfo("Incorrect Email", "Your email is invalid, please try again.")
         emailText = Text(newEmailWindow, height=1, width=19)
