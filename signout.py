@@ -96,10 +96,12 @@ def returnWindow():
         newEmailWindow.geometry("700x700")
         newEmailWindow.configure(bg="beige")
         def collectEmail():
+            global nikReturn
+            global nikSignout
             emailValue = emailInput.get()
             if "." in emailValue and "@" in emailValue and "gapps" in emailValue:   
                 if nikReturn == 0:
-                    nope = Label(newEmailWindow, text = "rebel ran out")
+                    tkinter.messagebox.showinfo("Ran Out", "We have run out of Rebels")
                 else:
                     nikReturn = nikReturn - 1
                     nikSignout = nikSignout + 1
@@ -114,8 +116,6 @@ def returnWindow():
         emailInput.pack()
         getEmail = Button(newEmailWindow, text="Enter", command=lambda: collectEmail())
         getEmail.pack()
-        global nikReturn
-        global nikSignout
     #to return a nikon
     nikonReturn = Button(newWindow, text="Return", command=lambda: nikEmailWindow())
     nikonReturn.place(x=280, y=260)
