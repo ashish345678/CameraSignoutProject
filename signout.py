@@ -53,6 +53,7 @@ def signoutWindow():
                 else:
                     nikSignout = nikSignout -1
                     nikReturn = nikReturn + 1
+                    tkinter.messagebox.showinfo("Received", "Your camera has been signed out, Thank you.")
             else:
                 tkinter.messagebox.showinfo("Incorrect Email", "Your email is invalid, please try again.")
         emailText = Text(newEmailWindow, height=1, width=19)
@@ -76,13 +77,28 @@ def signoutWindow():
         newEmailWindow = Toplevel(newWindow)
         newEmailWindow.geometry("700x700")
         newEmailWindow.configure(bg="beige")
-        global rebSignout
-        global rebReturn
-        if rebSignout == 0:
-            nope = Label(newEmailWindow, text = "rebel ran out")
-        else:
-            rebSignout = rebSignout - 1
-            rebReturn = rebReturn + 1
+        def collectEmail():
+            global rebReturn
+            global rebSignout
+            emailValue = emailInput.get()
+            if "." in emailValue and "@" in emailValue and "gapps" in emailValue:   
+                if rebSignout == 0:
+                    tkinter.messagebox.showinfo("Ran Out", "We have run out of Rebels")
+                else:
+                    rebSignout = rebSignout - 1
+                    rebReturn =  rebReturn + 1
+                    tkinter.messagebox.showinfo("Received", "Your camera has been signed out, Thank you.")
+            else:
+                tkinter.messagebox.showinfo("Incorrect Email", "Your email is invalid, please try again.")
+        emailText = Text(newEmailWindow, height=1, width=19)
+        emailText.insert("1.0", "What is your email?")
+        emailText.place(x=190, y=70)
+        emailText.config(state=DISABLED)
+        emailText.pack()
+        emailInput = Entry(newEmailWindow)
+        emailInput.pack()
+        getEmail = Button(newEmailWindow, text="Enter", command=lambda: collectEmail())
+        getEmail.pack()
         
     cam2 = Button(newWindow, text = "press to sign out", command = lambda:rebEmailWindow())
     cam2.place(x = 280, y = 330)
