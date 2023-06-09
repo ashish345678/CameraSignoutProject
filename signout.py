@@ -101,7 +101,7 @@ def returnWindow():
             emailValue = emailInput.get()
             if "." in emailValue and "@" in emailValue and "gapps" in emailValue:   
                 if nikReturn == 0:
-                    tkinter.messagebox.showinfo("Ran Out", "We have run out of Rebels")
+                    tkinter.messagebox.showinfo("Ran Out", "We have run out of Nikons")
                 else:
                     nikReturn = nikReturn - 1
                     nikSignout = nikSignout + 1
@@ -127,13 +127,27 @@ def returnWindow():
         newEmailWindow = Toplevel(newWindow)
         newEmailWindow.geometry("700x700")
         newEmailWindow.configure(bg="beige")
-        global rebReturn
-        global rebSignout
-        if rebReturn == 0:
-            nope = Label(newEmailWindow, text = "rebel ran out")
-        else:
-            rebReturn = rebReturn - 1
-            rebSignout = rebSignout + 1
+        def collectEmail():
+            global nikReturn
+            global nikSignout
+            emailValue = emailInput.get()
+            if "." in emailValue and "@" in emailValue and "gapps" in emailValue:   
+                if nikReturn == 0:
+                    tkinter.messagebox.showinfo("Ran Out", "We have run out of Rebels")
+                else:
+                    nikReturn = nikReturn - 1
+                    nikSignout = nikSignout + 1
+            else:
+                tkinter.messagebox.showinfo("Incorrect Email", "Your email is invalid, please try again.")
+        emailText = Text(newEmailWindow, height=1, width=19)
+        emailText.insert("1.0", "What is your email?")
+        emailText.place(x=190, y=70)
+        emailText.config(state=DISABLED)
+        emailText.pack()
+        emailInput = Entry(newEmailWindow)
+        emailInput.pack()
+        getEmail = Button(newEmailWindow, text="Enter", command=lambda: collectEmail())
+        getEmail.pack()
     #button to return a rebel
     rebelReturn = Button(newWindow, text="Return", command=lambda: rebEmailWindow())
     rebelReturn.place(x=280, y=330)
