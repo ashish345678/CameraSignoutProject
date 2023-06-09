@@ -145,7 +145,7 @@ def reportWindow():
         newEmailWindow.configure(bg="beige")
         emailText = Text(newEmailWindow, height=1, width=19)
         emailText.insert("1.0", "What is your email?")
-        emailText.place(x=190, y=10)
+        emailText.place(x=190, y=70)
         emailText.config(state=DISABLED)
         emailText.pack()
     #Button to report a nikon
