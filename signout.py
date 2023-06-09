@@ -43,14 +43,27 @@ def signoutWindow():
         newEmailWindow = Toplevel(newWindow)
         newEmailWindow.geometry("700x700")
         newEmailWindow.configure(bg="beige")
-        global nikSignout 
-        global nikReturn
-        if nikSignout == 0:
-            nope = Label(newEmailWindow, text = "rebel ran out")
-            nope.place()
-        else:
-            nikSignout = nikSignout - 1
-            nikReturn = nikReturn + 1
+        def collectEmail():
+            global nikReturn
+            global nikSignout
+            emailValue = emailInput.get()
+            if "." in emailValue and "@" in emailValue and "gapps" in emailValue:   
+                if nikSignout == 0:
+                    tkinter.messagebox.showinfo("Ran Out", "We have run out of Nikons")
+                else:
+                    nikSignout = nikSignout -1
+                    nikReturn = nikReturn + 1
+            else:
+                tkinter.messagebox.showinfo("Incorrect Email", "Your email is invalid, please try again.")
+        emailText = Text(newEmailWindow, height=1, width=19)
+        emailText.insert("1.0", "What is your email?")
+        emailText.place(x=190, y=70)
+        emailText.config(state=DISABLED)
+        emailText.pack()
+        emailInput = Entry(newEmailWindow)
+        emailInput.pack()
+        getEmail = Button(newEmailWindow, text="Enter", command=lambda: collectEmail())
+        getEmail.pack()
         
     cam = Button(newWindow, text = "press to sign out", command = lambda: nikEmailWindow())
     cam.place(x = 280, y = 260)
