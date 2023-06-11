@@ -31,12 +31,11 @@ rebRepair =  int(line[18][7])
 def signoutWindow():
     # Opens the window that is for signing out cameras
     newWindow = Toplevel(root)          # Creates the window and sets it on the top level
-    newWindow.geometry("700x700")       # Sets the geometry of the new window
+    newWindow.geometry("2000x1000")       # Sets the geometry of the new window
     newWindow.configure(bg="beige")     # Changes the background of the window
     text = Text(newWindow, height=1, width=36)
     text.pack()
-    text.place(y=1)
-    text.place(x=190, y=10)
+    text.place(x=600, y=30)
     text.insert("1.0", "This page is for signing out cameras")
     text.config(state=DISABLED)
     #window that opens when nikon is chosen
@@ -68,11 +67,11 @@ def signoutWindow():
         getEmail.pack()
         
     cam = Button(newWindow, text = "press to sign out", command = lambda: nikEmailWindow())
-    cam.place(x = 280, y = 260)
+    cam.place(x = 630, y = 260)
     nik = Text(newWindow, height=1, width=7)
     nik.insert("1.0", ("Nikon", nikSignout))
     nik.config(state=DISABLED)
-    nik.place(x = 380, y =  260)
+    nik.place(x = 730, y =  260)
     #Window that opens when rebel is chosen
     def rebEmailWindow():
         newEmailWindow = Toplevel(newWindow)
@@ -102,11 +101,11 @@ def signoutWindow():
         getEmail.pack()
         
     cam2 = Button(newWindow, text = "press to sign out", command = lambda:rebEmailWindow())
-    cam2.place(x = 280, y = 330)
+    cam2.place(x = 630, y = 330)
     reb = Text(newWindow, height=1, width=7)
     reb.insert("1.0", ("Rebel", rebSignout))
     reb.config(state = DISABLED)
-    reb.place(x= 380, y = 330)
+    reb.place(x= 730, y = 330)
 
 
 def returnWindow():
