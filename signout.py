@@ -11,7 +11,8 @@ root = Tk()
 root.geometry("2000x1000")
 root.title("camera sign out sheet")
 label = Label(root, text="Camera Sign Out", font = ('ariel', 22))
-label.place(x = 600, y=175 )
+label.place(height=75, width=235)
+label.place(x = 650, y=150)
 root.configure(bg="beige")
 with open('camerastock.csv') as file:
     open = file.read()
@@ -238,9 +239,11 @@ def reportWindow():
 
 SignOut = Button(root, text="Sign out", command = signoutWindow)
 SignOut.place(x = 280, y = 300)
+SignOut.place(height=75, width=125)
 
 Return = Button(root, text="return", command=returnWindow)
-Return.place(x = 100, y = 300)
+Return.place(x = 700, y = 300)
+Return.place(height=75, width=125)
 
 Report = Button(root, text="Report", command=reportWindow)
 Report.place(x = 1100, y = 300)
