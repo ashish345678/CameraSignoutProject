@@ -41,7 +41,7 @@ def signoutWindow():
     #window that opens when nikon is chosen
     def nikEmailWindow():
         newEmailWindow = Toplevel(newWindow)
-        newEmailWindow.geometry("700x700")
+        newEmailWindow.geometry("2000x1000")
         newEmailWindow.configure(bg="beige")
         def collectEmail():
             global nikReturn
@@ -75,7 +75,7 @@ def signoutWindow():
     #Window that opens when rebel is chosen
     def rebEmailWindow():
         newEmailWindow = Toplevel(newWindow)
-        newEmailWindow.geometry("700x700")
+        newEmailWindow.geometry("2000x1000")
         newEmailWindow.configure(bg="beige")
         def collectEmail():
             global rebReturn
@@ -121,7 +121,7 @@ def returnWindow():
     text.config(state=DISABLED)
     def nikEmailWindow():
         newEmailWindow = Toplevel(newWindow)
-        newEmailWindow.geometry("700x700")
+        newEmailWindow.geometry("2000x1000")
         newEmailWindow.configure(bg="beige")
         def collectEmail():
             global nikReturn
@@ -154,7 +154,7 @@ def returnWindow():
     nik.config(state = DISABLED)
     def rebEmailWindow():
         newEmailWindow = Toplevel(newWindow)
-        newEmailWindow.geometry("700x700")
+        newEmailWindow.geometry("2000x1000")
         newEmailWindow.configure(bg="beige")
         def collectEmail():
             global rebReturn
@@ -201,7 +201,7 @@ def reportWindow():
     def nikEmailWindow():
         # A window for collecting the information of the user reporting a camera
         newEmailWindow = Toplevel(newWindow)
-        newEmailWindow.geometry("700x700")
+        newEmailWindow.geometry("2000x1000")
         newEmailWindow.configure(bg="beige")
         def collectEmail():
             emailValue = emailInput.get()
@@ -223,7 +223,7 @@ def reportWindow():
     nik.config(state = DISABLED)
     def rebEmailWindow():
         newEmailWindow = Toplevel(newWindow)
-        newEmailWindow.geometry("700x700")
+        newEmailWindow.geometry("2000x1000")
         newEmailWindow.configure(bg="beige")
     #button to report a rebel
     rebelReport = Button(newWindow, text="Report", command=lambda: rebEmailWindow())
