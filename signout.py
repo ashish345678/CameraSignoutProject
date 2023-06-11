@@ -111,13 +111,12 @@ def signoutWindow():
 def returnWindow():
     # Opens the window that is for returning cameras
     newWindow = Toplevel(root)          
-    newWindow.geometry("700x700")       # Sets the geometry of the new window
+    newWindow.geometry("2000x1000")       # Sets the geometry of the new window
     newWindow.configure(bg="beige")
     #title page 
     text = Text(newWindow, height=1, width=36)
     text.pack()
-    text.place(y=1)
-    text.place(x=190, y=10)
+    text.place(x=600, y=30)
     text.insert("1.0", "This page is for returning cameras")
     text.config(state=DISABLED)
     def nikEmailWindow():
@@ -148,9 +147,9 @@ def returnWindow():
         getEmail.pack()
     #to return a nikon
     nikonReturn = Button(newWindow, text="Return", command=lambda: nikEmailWindow())
-    nikonReturn.place(x=280, y=260)
+    nikonReturn.place(x=630, y=260)
     nik = Text(newWindow, height=1, width=7)
-    nik.place(x=360, y=260)
+    nik.place(x = 715, y = 260)
     nik.insert("1.0", ("Nikon", nikReturn))
     nik.config(state = DISABLED)
     def rebEmailWindow():
@@ -181,9 +180,9 @@ def returnWindow():
         getEmail.pack()
     #button to return a rebel
     rebelReturn = Button(newWindow, text="Return", command=lambda: rebEmailWindow())
-    rebelReturn.place(x=280, y=330)
+    rebelReturn.place(x = 630, y = 330)
     reb = Text(newWindow, height=1, width=7)
-    reb.place(x=360, y=330)
+    reb.place(x= 715, y = 330)
     reb.insert("1.0", ("Rebel", rebReturn))
     reb.config(state = DISABLED)
 
