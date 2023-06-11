@@ -7,11 +7,11 @@ import os
 
 # Tkinter page
 root = Tk()
-root.geometry("700x700")
+root.geometry("2000x1000")
 root.title("camera sign out sheet")
 label = Label(root, text="Camera Sign Out", font = ('ariel', 22))
+label.place(x = 600, y=175 )
 root.configure(bg="beige")
-label.place(x = 220 , y=40)
 with open('camerastock.csv') as file:
     open = file.read()
     line = open.split()
@@ -22,7 +22,7 @@ rebSignout = int(line[6][6])
 nikReturn =  int(line[9][4])
 rebReturn =  int(line[12][4])
 nikRepair =  int(line[15][7])
-rebRepair = int(line[18][7])
+rebRepair =  int(line[18][7])
 #im1 = Image.open(r"C:\Users\Vsubramanyam\Downloads\20210511_132009.jpg")
 
 
@@ -175,8 +175,10 @@ SignOut.place(x = 280, y = 300)
 Return = Button(root, text="return", command=returnWindow)
 Return.place(x = 100, y = 300)
 
-Report = Button(root, text="report", command=reportWindow)
-Report.place(x = 450, y = 300)
+Report = Button(root, text="Report", command=reportWindow)
+Report.place(x = 1100, y = 300)
+Report.place(height=75, width=125)
+
 
 
 root.mainloop()
