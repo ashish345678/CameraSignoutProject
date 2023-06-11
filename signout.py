@@ -238,11 +238,11 @@ def reportWindow():
 
 
 SignOut = Button(root, text="Sign out", command = signoutWindow)
-SignOut.place(x = 280, y = 300)
+SignOut.place(x = 700, y = 300)
 SignOut.place(height=75, width=125)
 
 Return = Button(root, text="return", command=returnWindow)
-Return.place(x = 700, y = 300)
+Return.place(x = 280, y = 300)
 Return.place(height=75, width=125)
 
 Report = Button(root, text="Report", command=reportWindow)
