@@ -8,7 +8,7 @@ import tkinter.messagebox
 
 # Tkinter page
 root = Tk()
-root.geometry("2000x1000")
+root.geometry("800x800")
 root.title("camera sign out sheet")
 label = Label(root, text="Camera Sign Out", font = ('ariel', 22))
 label.place(height=75, width=235)
@@ -23,8 +23,8 @@ nikSignout = int(line[3][6])
 rebSignout = int(line[6][6])
 nikReturn =  int(line[9][4])
 rebReturn =  int(line[12][4])
-nikRepair =  int(line[15][7])
-rebRepair =  int(line[18][7])
+nikReport =  int(line[15][7])
+rebReport =  int(line[18][7])
 #im1 = Image.open(r"C:\Users\Vsubramanyam\Downloads\20210511_132009.jpg")
 
 
@@ -204,14 +204,14 @@ def reportWindow():
         newEmailWindow.geometry("2000x1000")
         newEmailWindow.configure(bg="beige")
         def collectEmail():
-            global nikReturn
             global nikReport
+            global nikSignout
             emailValue = emailInput.get()
             if "." in emailValue and "@" in emailValue and "gapps" in emailValue:   
-                if nikReturn == 0:
+                if nikSignout == 0:
                     tkinter.messagebox.showinfo("No cameras", "There are no cameras that can be reported")
                 else:
-                    nikReturn = nikReturn - 1
+                    nikSignout = nikSignout - 1
                     nikReport = nikReport +1
                     
                     tkinter.messagebox.showinfo("Received", "We'll take a look at this, Thank you.")
@@ -231,7 +231,7 @@ def reportWindow():
     nikonReport = Button(newWindow, text="Report", command=lambda: nikEmailWindow())
     nikonReport.place(x=700, y=260)
     nik = Text(newWindow, height=1, width=7)
-    nik.insert("1.0", ("Nikon", nikRepair))
+    nik.insert("1.0", ("Nikon", nikReport))
     nik.place(x=780, y=260)
     nik.config(state = DISABLED)
 
@@ -240,7 +240,7 @@ def reportWindow():
         newEmailWindow.geometry("2000x1000")
         newEmailWindow.configure(bg="beige")
         def collectEmail():
-            global rebReturn
+            global nikSignout
             global rebReport
             emailValue = emailInput.get()
             if "." in emailValue and "@" in emailValue and "gapps" in emailValue:   
@@ -248,7 +248,7 @@ def reportWindow():
                     tkinter.messagebox.showinfo("No cameras", "There are no cameras that can be reported")
                 else:
                     rebReport = rebReport + 1
-                    rebReturn =  rebReturn - 1
+                    nikSignout =  nikSignout - 1
                     tkinter.messagebox.showinfo("Received", "We'll take a look at this, Thank you.")
             else:
                 tkinter.messagebox.showinfo("Incorrect Email", "Your email is invalid, please try again.")
@@ -267,7 +267,7 @@ def reportWindow():
     rebelReport = Button(newWindow, text="Report", command=lambda: rebEmailWindow())
     rebelReport.place(x= 700, y = 330)
     reb = Text(newWindow, height=1, width=7)
-    reb.insert("1.0", ("Rebel",rebRepair))
+    reb.insert("1.0", ("Rebel",rebReport))
     reb.place(x= 780, y = 330)
     reb.config(state = DISABLED)
     #reportImage = Image.open("<downloads/camera.JPEG>")
