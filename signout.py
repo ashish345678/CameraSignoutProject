@@ -8,7 +8,7 @@ import tkinter.messagebox
 
 # Tkinter page
 root = Tk()
-root.geometry("2000x1000")
+root.geometry("800x800")
 root.title("camera sign out sheet")
 label = Label(root, text="Camera Sign Out", font = ('ariel', 22))
 label.place(height=75, width=235)
