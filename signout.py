@@ -4,7 +4,7 @@ import random
 import csv
 import os
 import tkinter.messagebox
-#from PIL import ImageTk, Image
+from PIL import ImageTk, Image
 
 folder = os.getcwd()
 
