@@ -208,8 +208,8 @@ def reportWindow():
             global nikReport
             emailValue = emailInput.get()
             if "." in emailValue and "@" in emailValue and "gapps" in emailValue:   
-                if nikReturn == 0:
-                    tkinter.messagebox.showinfo("No cameras", "There are no cameras that are being used")
+                if rebSignout == 0:
+                    tkinter.messagebox.showinfo("No cameras", "There are no cameras that can be reported")
                 else:
                     nikReturn = nikReturn - 1
                     nikReport = nikReport + 1 
@@ -239,16 +239,16 @@ def reportWindow():
         newEmailWindow.geometry("2000x1000")
         newEmailWindow.configure(bg="beige")
         def collectEmail():
-            global rebReturn
+            global rebSignout
             global rebReport
             emailValue = emailInput.get()
             if "." in emailValue and "@" in emailValue and "gapps" in emailValue:   
-                if rebReturn == 0:
-                    tkinter.messagebox.showinfo("Ran Out", "We have run out of Rebels")
+                if rebSignout == 0:
+                    tkinter.messagebox.showinfo("No cameras", "There are no cameras that can be reported")
                 else:
                     rebReport = rebReport + 1
-                    rebReturn =  rebReturn - 1
-                    tkinter.messagebox.showinfo("Received", "Your camera has been signed out, Thank you.")
+                    rebSignout =  rebSignout - 1
+                    tkinter.messagebox.showinfo("Received", "We'll take a look at this, Thank you.")
             else:
                 tkinter.messagebox.showinfo("Incorrect Email", "Your email is invalid, please try again.")
     
