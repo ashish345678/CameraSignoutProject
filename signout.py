@@ -204,7 +204,18 @@ def reportWindow():
         newEmailWindow.geometry("2000x1000")
         newEmailWindow.configure(bg="beige")
         def collectEmail():
+            global nikReturn
+            global nikReport
             emailValue = emailInput.get()
+            if "." in emailValue and "@" in emailValue and "gapps" in emailValue:   
+                if nikReturn == 0:
+                    tkinter.messagebox.showinfo("No cameras", "There are no cameras that are being used")
+                else:
+                    nikReturn = nikReturn - 1
+                    nikReport = nikReport + 1 
+                    tkinter.messagebox.showinfo("Received", "We'll take a look at this, Thank you.")
+            else:
+                tkinter.messagebox.showinfo("Incorrect Email", "Your email is invalid, please try again.")
         emailText = Text(newEmailWindow, height=1, width=19)
         emailText.insert("1.0", "What is your email?")
         emailText.place(x=190, y=70)
@@ -212,8 +223,9 @@ def reportWindow():
         emailText.pack()
         emailInput = Entry(newEmailWindow)
         emailInput.pack()
-        getEmail = Button(newEmailWindow, text="Enter")
+        getEmail = Button(newEmailWindow, text="Enter", command=lambda: collectEmail())
         getEmail.pack()
+        
     #Button to report a nikon
     nikonReport = Button(newWindow, text="Report", command=lambda: nikEmailWindow())
     nikonReport.place(x=700, y=260)
@@ -221,11 +233,36 @@ def reportWindow():
     nik.insert("1.0", ("Nikon", nikRepair))
     nik.place(x=780, y=260)
     nik.config(state = DISABLED)
+
     def rebEmailWindow():
         newEmailWindow = Toplevel(newWindow)
         newEmailWindow.geometry("2000x1000")
         newEmailWindow.configure(bg="beige")
-    #button to report a rebel
+        def collectEmail():
+            global rebReturn
+            global rebReport
+            emailValue = emailInput.get()
+            if "." in emailValue and "@" in emailValue and "gapps" in emailValue:   
+                if rebReturn == 0:
+                    tkinter.messagebox.showinfo("Ran Out", "We have run out of Rebels")
+                else:
+                    rebReport = rebReport + 1
+                    rebReturn =  rebReturn - 1
+                    tkinter.messagebox.showinfo("Received", "Your camera has been signed out, Thank you.")
+            else:
+                tkinter.messagebox.showinfo("Incorrect Email", "Your email is invalid, please try again.")
+    
+        emailText = Text(newEmailWindow, height=1, width=19)
+        emailText.insert("1.0", "What is your email?")
+        emailText.place(x=190, y=70)
+        emailText.config(state=DISABLED)
+        emailText.pack()
+        emailInput = Entry(newEmailWindow)
+        emailInput.pack()
+        getEmail = Button(newEmailWindow, text="Enter", command=lambda: collectEmail())
+        getEmail.pack()
+
+    #button to report a rebel 
     rebelReport = Button(newWindow, text="Report", command=lambda: rebEmailWindow())
     rebelReport.place(x= 700, y = 330)
     reb = Text(newWindow, height=1, width=7)
