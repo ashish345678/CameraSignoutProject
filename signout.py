@@ -29,7 +29,7 @@ nikRepair =  int(line[15][7])
 rebRepair =  int(line[18][7])
 img1 = ImageTk.PhotoImage(Image.open(folder + "\\camera.JPEG"))
 panel = Label(root, image = img1)
-panel.pack(side="bottom", fill="both", expand="yes")
+panel.place(x=600, y=450)
 
 
 def signoutWindow():
