@@ -132,7 +132,7 @@ def returnWindow():
             emailValue = emailInput.get()
             if "." in emailValue and "@" in emailValue and "gapps" in emailValue:   
                 if nikReturn == 0:
-                    tkinter.messagebox.showinfo("Ran Out", "We have run out of Nikons")
+                    tkinter.messagebox.showinfo("Ran Out", "No Nikions")
                 else:
                     nikReturn = nikReturn - 1
                     nikSignout = nikSignout + 1
