@@ -4,7 +4,9 @@ import random
 import csv
 import os
 import tkinter.messagebox
-# from PIL import Image
+from PIL import ImageTk, Image
+
+folder = os.getcwd()
 
 # Tkinter page
 root = Tk()
@@ -25,7 +27,9 @@ nikReturn =  int(line[9][4])
 rebReturn =  int(line[12][4])
 nikRepair =  int(line[15][7])
 rebRepair =  int(line[18][7])
-#im1 = Image.open(r"C:\Users\Vsubramanyam\Downloads\20210511_132009.jpg")
+img1 = ImageTk.PhotoImage(Image.open(folder + "\\camera.JPEG"))
+panel = Label(root, image = img1)
+panel.pack(side="bottom", fill="both", expand="yes")
 
 
 def signoutWindow():
