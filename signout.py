@@ -132,7 +132,7 @@ def returnWindow():
             emailValue = emailInput.get()
             if "." in emailValue and "@" in emailValue and "gapps" in emailValue:   
                 if nikReturn == 0:
-                    tkinter.messagebox.showinfo("Ran Out", "No Nikions")
+                    tkinter.messagebox.showinfo("Ran Out", "No Nikions can be returned ")
                 else:
                     nikReturn = nikReturn - 1
                     nikSignout = nikSignout + 1
@@ -165,7 +165,7 @@ def returnWindow():
             emailValue = emailInput.get()
             if "." in emailValue and "@" in emailValue and "gapps" in emailValue:   
                 if rebReturn == 0:
-                    tkinter.messagebox.showinfo("Ran Out", "We have run out of Rebels")
+                    tkinter.messagebox.showinfo("Ran Out", "No Rebels can be returned")
                 else:
                     rebReturn = rebReturn - 1
                     rebSignout = rebSignout + 1
@@ -278,12 +278,17 @@ def reportWindow():
 
 SignOut = Button(root, text="Sign out", command = signoutWindow)
 SignOut.place(x = 280, y = 300)
+SignOut.place(height=75, width=125)
+
 
 Return = Button(root, text="return", command=returnWindow)
 Return.place(x = 100, y = 300)
+Return.place(height=75, width=125)
+
 
 Report = Button(root, text="Report", command=reportWindow)
 Report.place(x = 450, y = 300)
+Report.place(height=75, width=125)
 
 
 
