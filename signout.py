@@ -4,7 +4,7 @@ import random
 import csv
 import os
 import tkinter.messagebox
-from PIL import ImageTk, Image
+#from PIL import ImageTk, Image
 
 folder = os.getcwd()
 
@@ -239,7 +239,6 @@ def reportWindow():
     nik.insert("1.0", ("Nikon", nikReport))
     nik.place(x=360, y=330)
     nik.config(state = DISABLED)
-
     def rebEmailWindow():
         newEmailWindow = Toplevel(newWindow)
         newEmailWindow.geometry("700x700")
