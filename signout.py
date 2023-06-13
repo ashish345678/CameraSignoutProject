@@ -108,7 +108,7 @@ def signoutWindow():
     cam2 = Button(newWindow, text = "press to sign out", command = lambda:rebEmailWindow()) #press to sign out rebel 
     cam2.place(x = 280, y = 330)
     reb = Text(newWindow, height=1, width=7)
-    reb.insert("1.0", ("Rebel", rebSignout)) # Adds Rebel to the text 
+    reb.insert("1.0", ("Rebel", rebSignout)) # Adds Reb to the text 
     reb.config(state = DISABLED)
     reb.place(x= 380, y = 330)
 
@@ -277,8 +277,37 @@ def reportWindow():
     reb.config(state = DISABLED)
     
     def RestoreReb():
-        pass
+        newRestoreWindow = Toplevel(newWindow)
+        newRestoreWindow.geometry("700x700")
+        newRestoreWindow.configure(bg="beige")
+        def ValidPass():
+            global AdminPass
+            global rebReport
+            global rebSignout
+            adminValue = AdminInput.get()
+            if rebReport == 0:
+                 tkinter.messagebox.showinfo("No cameras", "There are no cameras that are in repair")
+            elif adminValue==AdminPass:
+                rebReport = rebReport -1
+                rebSignout = rebSignout + 1
+                tkinter.messagebox.showinfo("sucesss", "Rebel is now repaired and good to go!")
+            else:
+                 tkinter.messagebox.showinfo("wrong", "Administration password is incorrect, please try again")
+        AdminText = Text(newRestoreWindow, height=1, width=30)
+        AdminText.insert("1.0", "Enter Administration password")
+        AdminText.config(state=DISABLED)
+        AdminText.pack()
+        AdminInput = Entry(newRestoreWindow)
+        AdminInput.pack()
+        Pass = Button(newRestoreWindow, text="Enter", command=lambda: ValidPass())
+        Pass.pack()
 
+    rebRestore = Button(newWindow, text = "restore(ADMINONLY)", command = lambda: RestoreReb())
+    rebRestore.place(x = 280, y = 400)
+    restore = Text(newWindow, height=1, width=7)
+    restore.insert("1.0", ("rebel",rebReport))
+    restore.place(x=420,y = 400)
+    restore.config(state = DISABLED)
     def RestoreNik():
         newRestoreWindow = Toplevel(newWindow)      # Creates a new window
         newRestoreWindow.geometry("700x700")        # Defines the geometry of the new window
@@ -295,7 +324,7 @@ def reportWindow():
                 else:                               # Else statement for any other scenario
                     nikSignout = nikSignout + 1     # Add a camera to the signout variable
                     nikReport = nikReport - 1       # Subtract a camera from the report variable
-                    tkinter.messagebox.showinfo("Received", "The camera has been put up for signout.")      # Notification for user
+                    tkinter.messagebox.showinfo("Received", "Rebel is now repaired and good to go!")      # Notification for user
             else:                                   # Else statement for if the password is incorrect
                 tkinter.messagebox.showinfo("Incorrect", "The password you used was incorrect, please try again.")      # Notification for user
 
