@@ -338,7 +338,7 @@ def reportWindow():
         getPassword = Button(newRestoreWindow, text="enter", command=lambda: collectPassword())     # Create a button to input the password
         getPassword.pack()                                              # Pack the button
 
-    nikRestore = Button(newWindow, text="Restore Nikon", command=lambda: RestoreNik())      # Take the user to the restore window for Nikon
+    nikRestore = Button(newWindow, text="restore(ADMINONLY)", command=lambda: RestoreNik())      # Take the user to the restore window for Nikon
     nikRestore.place(x=300, y=430)                                      # Place the button on the window
     #reportImage = Image.open("<downloads/camera.JPEG>")
 
