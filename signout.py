@@ -20,12 +20,14 @@ with open('camerastock.csv') as file:
     line = open.split()
     
 print(line)
+# # of cams in each category 
 nikSignout = int(line[3][6])
 rebSignout = int(line[6][6])
 nikReturn =  int(line[9][4])
 rebReturn =  int(line[12][4])
 nikReport=  int(line[15][7])
 rebReport=  int(line[18][7])
+AdminPass = "youwannagetnutsletsgetnuts" 
 #img1 = ImageTk.PhotoImage(Image.open(folder + "\\camera.JPEG"))
 #panel = Label(root, image = img1)
 #panel.place(x=600, y=450)
@@ -243,7 +245,7 @@ def reportWindow():
         newEmailWindow.geometry("700x700")
         newEmailWindow.configure(bg="beige")
         def collectEmail():
-            global nikSignout
+            global rebSignout
             global rebReport
             emailValue = emailInput.get()
             if "." in emailValue and "@" in emailValue and "gapps" in emailValue:   
@@ -251,7 +253,7 @@ def reportWindow():
                     tkinter.messagebox.showinfo("No cameras", "There are no cameras that can be reported")
                 else:
                     rebReport = rebReport + 1
-                    nikSignout =  nikSignout - 1
+                    rebSignout = rebSignout - 1
                     tkinter.messagebox.showinfo("Received", "We'll take a look at this, Thank you.")
             else:
                 tkinter.messagebox.showinfo("Incorrect Email", "Your email is invalid, please try again.")
