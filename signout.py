@@ -214,7 +214,7 @@ def reportWindow():
             emailValue = emailInput.get()
             if "." in emailValue and "@" in emailValue and "gapps" in emailValue:   
                 if nikSignout == 0:
-                    tkinter.messagebox.showinfo("No cameras", "There are no cameras that can be reported")
+                    tkinter.messagebox.showinfo("No cameras", "There are no cameras that can be reported.")
                 else:
                     nikSignout = nikSignout - 1
                     nikReport = nikReport +1
@@ -249,7 +249,7 @@ def reportWindow():
             emailValue = emailInput.get()
             if "." in emailValue and "@" in emailValue and "gapps" in emailValue:   
                 if rebSignout == 0:
-                    tkinter.messagebox.showinfo("No cameras", "There are no cameras that can be reported")
+                    tkinter.messagebox.showinfo("No cameras", "There are no cameras that can be reported.")
                 else:
                     rebReport = rebReport + 1
                     rebSignout = rebSignout - 1
@@ -277,9 +277,39 @@ def reportWindow():
     
     def RestoreReb():
         pass
-    
+
     def RestoreNik():
-        pass
+        newRestoreWindow = Toplevel(newWindow)
+        newRestoreWindow.geometry("700x700")
+        newRestoreWindow.configure(bg="beige")
+
+        def collectPassword():
+            global AdminPass
+            global nikReport
+            global nikSignout
+            passwordValue = passwordInput.get()
+            if passwordValue == AdminPass:
+                if nikReport == 0:
+                    tkinter.messagebox.showinfo("No Damage", "There are no cameras that are in for repairs.")
+                else:
+                    nikSignout = nikSignout + 1
+                    nikReport = nikReport - 1
+                    tkinter.messagebox.showinfo("Received", "The camera has been put up for signout.")
+            else:
+                tkinter.messagebox.showinfo("Incorrect", "The password you used was incorrect, please try again.")
+
+        passwordText = Text(newRestoreWindow, height=1, width=20)
+        passwordText.insert("1.0", "What's the password?")
+        passwordText.place(x=190, y=70)
+        passwordText.config(state=DISABLED)
+        passwordText.pack()
+        passwordInput = Entry(newRestoreWindow)
+        passwordInput.pack()
+        getPassword = Button(newRestoreWindow, text="enter", command=lambda: collectPassword())
+        getPassword.pack()
+
+    nikRestore = Button(newWindow, text="Restore Nikon", command=lambda: RestoreNik())
+    nikRestore.place(x=300, y=430)
     #reportImage = Image.open("<downloads/camera.JPEG>")
 
 
