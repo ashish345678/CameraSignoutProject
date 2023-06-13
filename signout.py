@@ -359,8 +359,5 @@ Report.place(height=75, width=125)
 
 
 file.close()
-text = [("Rebels in stock|" + rebSignout),("Nikons in stock|" + nikSignout),("Rebels in use|"+rebReturn),("Nikons in use|"+nikReturn),("Rebels in repair|"+rebReport),("Nikons in repair|"+nikReport)]
 
-with open('camerastock.csv', 'w'):
-    file.write(text)
 root.mainloop()
