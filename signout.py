@@ -27,7 +27,7 @@ nikReturn =  int(line[9][4])
 rebReturn =  int(line[12][4])
 nikReport=  int(line[15][7])
 rebReport=  int(line[18][7])
-AdminPass = "youwannagetnutsletsgetnuts" 
+AdminPass = "youwannagetnutsletsgetnuts"  # password in order to put cameras that are reported back into signout 
 #img1 = ImageTk.PhotoImage(Image.open(folder + "\\camera.JPEG"))
 #panel = Label(root, image = img1)
 #panel.place(x=600, y=450)
@@ -88,7 +88,7 @@ def signoutWindow():
             emailValue = emailInput.get()
             if "." in emailValue and "@" in emailValue and "gapps" in emailValue:    # makes it where if the email doesn't have ".", "@" and "gapps"
                 if rebSignout == 0:
-                    tkinter.messagebox.showinfo("Ran Out", "We have run out of Rebels") # if there are no more nikons left prints this messagebox 
+                    tkinter.messagebox.showinfo("Ran Out", "We have run out of Rebels") # if there are no more Rebels left prints this messagebox 
                 else:
                     rebSignout = rebSignout - 1 # minus one from signout when email is valid 
                     rebReturn =  rebReturn + 1   # Adds one from return when email is vali
@@ -108,72 +108,72 @@ def signoutWindow():
     cam2 = Button(newWindow, text = "press to sign out", command = lambda:rebEmailWindow()) #press to sign out rebel 
     cam2.place(x = 280, y = 330)
     reb = Text(newWindow, height=1, width=7)
-    reb.insert("1.0", ("Rebel", rebSignout)) # Adds Nikon to the text 
+    reb.insert("1.0", ("Rebel", rebSignout)) # Adds Rebel to the text 
     reb.config(state = DISABLED)
     reb.place(x= 380, y = 330)
 
 
 def returnWindow():
     # Opens the window that is for returning cameras
-    newWindow = Toplevel(root)          
+    newWindow = Toplevel(root)          # Creates the window and sets it on the top level
     newWindow.geometry("700x700")       # Sets the geometry of the new window
-    newWindow.configure(bg="beige")
+    newWindow.configure(bg="beige")     # Changes the background of the window
     #title page 
     text = Text(newWindow, height=1, width=36)
     text.pack()
-    text.place(x=190, y=10)
+    text.place(x=190, y=10) # changes the location of where the text is on the page
     text.insert("1.0", "This page is for returning cameras")
-    text.config(state=DISABLED)
+    text.config(state=DISABLED) # Text cannot be edited 
     def nikEmailWindow():
-        newEmailWindow = Toplevel(newWindow)
-        newEmailWindow.geometry("700x700")
+        newEmailWindow = Toplevel(newWindow) # Creates the window and sets it on the top level
+        newEmailWindow.geometry("700x700") # Sets the geometry of the new window
         newEmailWindow.configure(bg="beige")
         def collectEmail():
             global nikReturn
             global nikSignout
             emailValue = emailInput.get()
-            if "." in emailValue and "@" in emailValue and "gapps" in emailValue:   
+            if "." in emailValue and "@" in emailValue and "gapps" in emailValue:   # makes it where if the email doesn't have ".", "@" and "gapps"
                 if nikReturn == 0:
-                    tkinter.messagebox.showinfo("Ran Out", "No Nikions can be returned ")
+                    tkinter.messagebox.showinfo("Ran Out", "No Nikions can be returned ") # if there are no nikons that can be returned prints this messagebox 
                 else:
-                    nikReturn = nikReturn - 1
-                    nikSignout = nikSignout + 1
-                    tkinter.messagebox.showinfo("Received", "Your camera has been returned, Thank you.")
+                    nikReturn = nikReturn - 1 # minus one from signout when email is valid 
+                    nikSignout = nikSignout + 1 # Adds one from return when email is valid 
+                    tkinter.messagebox.showinfo("Received", "Your camera has been returned, Thank you.")  #prints message if valid 
             else:
-                tkinter.messagebox.showinfo("Incorrect Email", "Your email is invalid, please try again.")
+                tkinter.messagebox.showinfo("Incorrect Email", "Your email is invalid, please try again.") # prints if user types wrong email 
         emailText = Text(newEmailWindow, height=1, width=19)
-        emailText.insert("1.0", "What is your email?")
+        emailText.insert("1.0", "What is your email?") # prints tittle 
         emailText.place(x=190, y=70)
-        emailText.config(state=DISABLED)
+        emailText.config(state=DISABLED) #not able to edit text
         emailText.pack()
         emailInput = Entry(newEmailWindow)
         emailInput.pack()
-        getEmail = Button(newEmailWindow, text="Enter", command=lambda: collectEmail())
+        getEmail = Button(newEmailWindow, text="Enter", command=lambda: collectEmail()) # press to enter email
         getEmail.pack()
     #to return a nikon
-    nikonReturn = Button(newWindow, text="Return", command=lambda: nikEmailWindow())
+    nikonReturn = Button(newWindow, text="Return", command=lambda: nikEmailWindow()) #press to sign out nikon 
     nikonReturn.place(x=280, y=260)
     nik = Text(newWindow, height=1, width=7)
     nik.place(x = 360, y = 260)
     nik.insert("1.0", ("Nikon", nikReturn))
     nik.config(state = DISABLED)
     def rebEmailWindow():
-        newEmailWindow = Toplevel(newWindow)
-        newEmailWindow.geometry("700x700")
+        newEmailWindow = Toplevel(newWindow) # Creates the window and sets it on the top level
+        newEmailWindow.geometry("700x700") # Sets the geometry of the new window
         newEmailWindow.configure(bg="beige")
         def collectEmail():
             global rebReturn
             global rebSignout
             emailValue = emailInput.get()
-            if "." in emailValue and "@" in emailValue and "gapps" in emailValue:   
+            if "." in emailValue and "@" in emailValue and "gapps" in emailValue:     # makes it where if the email doesn't have ".", "@" and "gapps"
                 if rebReturn == 0:
-                    tkinter.messagebox.showinfo("Ran Out", "No Rebels can be returned")
+                    tkinter.messagebox.showinfo("Ran Out", "No Rebels can be returned") # if there are no more Rebels left prints this messagebox 
                 else:
-                    rebReturn = rebReturn - 1
-                    rebSignout = rebSignout + 1
-                    tkinter.messagebox.showinfo("Received", "Your camera has been returned, Thank you.")
+                    rebReturn = rebReturn - 1 # minus one from signout when email is valid
+                    rebSignout = rebSignout + 1 # add one from signout when email is valid
+                    tkinter.messagebox.showinfo("Received", "Your camera has been returned, Thank you.") #prints message if valid 
             else:
-                tkinter.messagebox.showinfo("Incorrect Email", "Your email is invalid, please try again.")
+                tkinter.messagebox.showinfo("Incorrect Email", "Your email is invalid, please try again.") # prints if user types wrong email
         emailText = Text(newEmailWindow, height=1, width=19)
         emailText.insert("1.0", "What is your email?")
         emailText.place(x=190, y=70)
@@ -212,50 +212,51 @@ def reportWindow():
             global nikReport
             global nikSignout
             emailValue = emailInput.get()
-            if "." in emailValue and "@" in emailValue and "gapps" in emailValue:   
+            if "." in emailValue and "@" in emailValue and "gapps" in emailValue: # makes it where if the email doesn't have ".", "@" and "gapps"  
                 if nikSignout == 0:
-                    tkinter.messagebox.showinfo("No cameras", "There are no cameras that can be reported.")
+                    tkinter.messagebox.showinfo("No cameras", "There are no cameras that can be reported.")  # if there are no more nikons left prints this messagebox 
                 else:
-                    nikSignout = nikSignout - 1
-                    nikReport = nikReport +1
+                    nikSignout = nikSignout - 1 # minus one from signout when email is valid 
+                    nikReport = nikReport +1# Adds one from Report when email is valid 
                     
-                    tkinter.messagebox.showinfo("Received", "We'll take a look at this, Thank you.")
+                    tkinter.messagebox.showinfo("Received", "We'll take a look at this, Thank you.") #prints message if valid 
             else:
-                tkinter.messagebox.showinfo("Incorrect Email", "Your email is invalid, please try again.")
+                tkinter.messagebox.showinfo("Incorrect Email", "Your email is invalid, please try again.")  # prints if user types wrong email 
         emailText = Text(newEmailWindow, height=1, width=19)
-        emailText.insert("1.0", "What is your email?")
+        emailText.insert("1.0", "What is your email?") # prints tittle 
         emailText.place(x=190, y=70)
-        emailText.config(state=DISABLED)
+        emailText.config(state=DISABLED) #not able to edit text
+        emailText.pack() 
         emailText.pack()
         emailInput = Entry(newEmailWindow)
         emailInput.pack()
-        getEmail = Button(newEmailWindow, text="Enter", command=lambda: collectEmail())
+        getEmail = Button(newEmailWindow, text="Enter", command=lambda: collectEmail()) # press to enter email
         getEmail.pack()
         
     #Button to report a nikon
-    nikonReport = Button(newWindow, text="Report", command=lambda: nikEmailWindow())
+    nikonReport = Button(newWindow, text="Report", command=lambda: nikEmailWindow()) #press to sign out nikon 
     nikonReport.place(x=280, y=330)
     nik = Text(newWindow, height=1, width=7)
     nik.insert("1.0", ("Nikon", nikReport))
     nik.place(x=360, y=330)
     nik.config(state = DISABLED)
     def rebEmailWindow():
-        newEmailWindow = Toplevel(newWindow)
-        newEmailWindow.geometry("700x700")
-        newEmailWindow.configure(bg="beige")
+        newEmailWindow = Toplevel(newWindow) # Creates the window and sets it on the top level
+        newEmailWindow.geometry("700x700")   # Sets the geometry of the new window
+        newEmailWindow.configure(bg="beige") # Changes the background of the window
         def collectEmail():
             global rebSignout
             global rebReport
             emailValue = emailInput.get()
             if "." in emailValue and "@" in emailValue and "gapps" in emailValue:   
                 if rebSignout == 0:
-                    tkinter.messagebox.showinfo("No cameras", "There are no cameras that can be reported.")
+                    tkinter.messagebox.showinfo("No cameras", "There are no cameras that can be reported.") # if there are no more Rebels that can be reported prints this messagebox 
                 else:
                     rebReport = rebReport + 1
                     rebSignout = rebSignout - 1
-                    tkinter.messagebox.showinfo("Received", "We'll take a look at this, Thank you.")
+                    tkinter.messagebox.showinfo("Received", "We'll take a look at this, Thank you.") #prints message if valid 
             else:
-                tkinter.messagebox.showinfo("Incorrect Email", "Your email is invalid, please try again.")
+                tkinter.messagebox.showinfo("Incorrect Email", "Your email is invalid, please try again.") # prints if user types wrong email
     
         emailText = Text(newEmailWindow, height=1, width=19)
         emailText.insert("1.0", "What is your email?")
@@ -271,7 +272,7 @@ def reportWindow():
     rebelReport = Button(newWindow, text="Report", command=lambda: rebEmailWindow())
     rebelReport.place(x= 280, y = 260)
     reb = Text(newWindow, height=1, width=7)
-    reb.insert("1.0", ("Rebel",rebReport))
+    reb.insert("1.0", ("Rebel",rebReport)) # Adds Nikon to the text 
     reb.place(x= 360, y = 260)
     reb.config(state = DISABLED)
     
