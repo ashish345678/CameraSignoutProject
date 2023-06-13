@@ -275,6 +275,12 @@ def reportWindow():
     reb.insert("1.0", ("Rebel",rebReport))
     reb.place(x= 360, y = 260)
     reb.config(state = DISABLED)
+    
+    def RestoreReb():
+        pass
+    
+    def RestoreNik():
+        pass
     #reportImage = Image.open("<downloads/camera.JPEG>")
 
 
