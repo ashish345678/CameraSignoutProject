@@ -15,7 +15,7 @@ root.title("camera sign out sheet")
 label = Label(root, text="Camera Sign Out", font = ('ariel', 22))
 label.place(x = 220, y=40)
 root.configure(bg="beige")
-with open('camerastock.csv') as file:
+with open('camerastock.csv','r') as file:
     open = file.read()
     line = open.split()
     
@@ -357,14 +357,9 @@ Report.place(x = 450, y = 300)
 Report.place(height=75, width=125)
 
 
-
-root.mainloop()
-
-def signout():
-    pass
-def returncamera():
-    pass
-
-def report():
-    pass
 file.close()
+text = [("Rebels in stock|" + rebSignout),("Nikons in stock|" + nikSignout),("Rebels in use|"+rebReturn),("Nikons in use|"+nikReturn),("Rebels in repair|"+rebReport),("Nikons in repair|"+nikReport)]
+
+with open('camerastock.csv', 'w'):
+    file.write(text)
+root.mainloop()
