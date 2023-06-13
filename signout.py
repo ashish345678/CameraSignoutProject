@@ -279,37 +279,37 @@ def reportWindow():
         pass
 
     def RestoreNik():
-        newRestoreWindow = Toplevel(newWindow)
-        newRestoreWindow.geometry("700x700")
-        newRestoreWindow.configure(bg="beige")
+        newRestoreWindow = Toplevel(newWindow)      # Creates a new window
+        newRestoreWindow.geometry("700x700")        # Defines the geometry of the new window
+        newRestoreWindow.configure(bg="beige")      # Configures the background of the new window
 
         def collectPassword():
             global AdminPass
             global nikReport
             global nikSignout
-            passwordValue = passwordInput.get()
-            if passwordValue == AdminPass:
-                if nikReport == 0:
-                    tkinter.messagebox.showinfo("No Damage", "There are no cameras that are in for repairs.")
-                else:
-                    nikSignout = nikSignout + 1
-                    nikReport = nikReport - 1
-                    tkinter.messagebox.showinfo("Received", "The camera has been put up for signout.")
-            else:
-                tkinter.messagebox.showinfo("Incorrect", "The password you used was incorrect, please try again.")
+            passwordValue = passwordInput.get()     # Gets the value the user inputted for the prompt labelled "passwordInput"
+            if passwordValue == AdminPass:          # If statement for if the password is correct
+                if nikReport == 0:                  # If statement for if there are no nikons in for repairs
+                    tkinter.messagebox.showinfo("No Damage", "There are no cameras that are in for repairs.")       # Notification for user
+                else:                               # Else statement for any other scenario
+                    nikSignout = nikSignout + 1     # Add a camera to the signout variable
+                    nikReport = nikReport - 1       # Subtract a camera from the report variable
+                    tkinter.messagebox.showinfo("Received", "The camera has been put up for signout.")      # Notification for user
+            else:                                   # Else statement for if the password is incorrect
+                tkinter.messagebox.showinfo("Incorrect", "The password you used was incorrect, please try again.")      # Notification for user
 
-        passwordText = Text(newRestoreWindow, height=1, width=20)
-        passwordText.insert("1.0", "What's the password?")
-        passwordText.place(x=190, y=70)
-        passwordText.config(state=DISABLED)
-        passwordText.pack()
-        passwordInput = Entry(newRestoreWindow)
-        passwordInput.pack()
-        getPassword = Button(newRestoreWindow, text="enter", command=lambda: collectPassword())
-        getPassword.pack()
+        passwordText = Text(newRestoreWindow, height=1, width=20)       # Create a text box for instructions
+        passwordText.insert("1.0", "What's the password?")              # Add text to the instruction box
+        passwordText.place(x=190, y=70)                                 # Place the text box on the window
+        passwordText.config(state=DISABLED)                             # Disable the text box so it cannot be tampered with by the user
+        passwordText.pack()                                             # Pack the text box
+        passwordInput = Entry(newRestoreWindow)                         # Create a box for user input
+        passwordInput.pack()                                            # Pack the user input box
+        getPassword = Button(newRestoreWindow, text="enter", command=lambda: collectPassword())     # Create a button to input the password
+        getPassword.pack()                                              # Pack the button
 
-    nikRestore = Button(newWindow, text="Restore Nikon", command=lambda: RestoreNik())
-    nikRestore.place(x=300, y=430)
+    nikRestore = Button(newWindow, text="Restore Nikon", command=lambda: RestoreNik())      # Take the user to the restore window for Nikon
+    nikRestore.place(x=300, y=430)                                      # Place the button on the window
     #reportImage = Image.open("<downloads/camera.JPEG>")
 
 
