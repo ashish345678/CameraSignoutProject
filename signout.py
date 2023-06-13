@@ -40,75 +40,75 @@ def signoutWindow():
     newWindow.configure(bg="beige")     # Changes the background of the window
     text = Text(newWindow, height=1, width=36)
     text.pack()
-    text.place(x=190, y=10)
-    text.insert("1.0", "This page is for signing out cameras")
-    text.config(state=DISABLED)
+    text.place(x=190, y=10)       # changes the location of where the text is on the page
+    text.insert("1.0", "This page is for signing out cameras") # tittle for the page 
+    text.config(state=DISABLED)  # Text cannot be edited 
     #window that opens when nikon is chosen
     def nikEmailWindow():
-        newEmailWindow = Toplevel(newWindow)
-        newEmailWindow.geometry("700x700")
+        newEmailWindow = Toplevel(newWindow) # Creates the window and sets it on the top level
+        newEmailWindow.geometry("700x700") # Sets the geometry of the new window
         newEmailWindow.configure(bg="beige")
         def collectEmail():
             global nikReturn
             global nikSignout
             emailValue = emailInput.get()
-            if "." in emailValue and "@" in emailValue and "gapps" in emailValue:   
+            if "." in emailValue and "@" in emailValue and "gapps" in emailValue:   # makes it where if the email doesn't have ".", "@" and "gapps"
                 if nikSignout == 0:
-                    tkinter.messagebox.showinfo("Ran Out", "We have run out of Nikons")
+                    tkinter.messagebox.showinfo("Ran Out", "We have run out of Nikons")     # if there are no more nikons left prints this messagebox 
                 else:
-                    nikSignout = nikSignout -1
-                    nikReturn = nikReturn + 1
-                    tkinter.messagebox.showinfo("Received", "Your camera has been signed out, Thank you.")
+                    nikSignout = nikSignout -1      # minus one from signout when email is valid 
+                    nikReturn = nikReturn + 1       # Adds one from return when email is valid 
+                    tkinter.messagebox.showinfo("Received", "Your camera has been signed out, Thank you.") #prints message if valid 
             else:
-                tkinter.messagebox.showinfo("Incorrect Email", "Your email is invalid, please try again.")
+                tkinter.messagebox.showinfo("Incorrect Email", "Your email is invalid, please try again.") # prints if user types wrong email 
         emailText = Text(newEmailWindow, height=1, width=19)
-        emailText.insert("1.0", "What is your email?")
+        emailText.insert("1.0", "What is your email?")  # prints tittle 
         emailText.place(x=190, y=70)
-        emailText.config(state=DISABLED)
-        emailText.pack()
+        emailText.config(state=DISABLED)  #not able to edit text
+        emailText.pack() 
         emailInput = Entry(newEmailWindow)
         emailInput.pack()
-        getEmail = Button(newEmailWindow, text="Enter", command=lambda: collectEmail())
+        getEmail = Button(newEmailWindow, text="Enter", command=lambda: collectEmail()) # press to enter email
         getEmail.pack()
         
-    cam = Button(newWindow, text = "press to sign out", command = lambda: nikEmailWindow())
+    cam = Button(newWindow, text = "press to sign out", command = lambda: nikEmailWindow()) #press to sign out nikon 
     cam.place(x = 280, y = 260)
     nik = Text(newWindow, height=1, width=7)
-    nik.insert("1.0", ("Nikon", nikSignout))
+    nik.insert("1.0", ("Nikon", nikSignout)) # Adds Nikon to the text 
     nik.config(state=DISABLED)
     nik.place(x = 380, y = 260)
     #Window that opens when rebel is chosen
     def rebEmailWindow():
-        newEmailWindow = Toplevel(newWindow)
+        newEmailWindow = Toplevel(newWindow) # Creates the window and sets it on the top level
         newEmailWindow.geometry("700x700")
         newEmailWindow.configure(bg="beige")
         def collectEmail():
             global rebReturn
             global rebSignout
             emailValue = emailInput.get()
-            if "." in emailValue and "@" in emailValue and "gapps" in emailValue:   
+            if "." in emailValue and "@" in emailValue and "gapps" in emailValue:    # makes it where if the email doesn't have ".", "@" and "gapps"
                 if rebSignout == 0:
-                    tkinter.messagebox.showinfo("Ran Out", "We have run out of Rebels")
+                    tkinter.messagebox.showinfo("Ran Out", "We have run out of Rebels") # if there are no more nikons left prints this messagebox 
                 else:
-                    rebSignout = rebSignout - 1
-                    rebReturn =  rebReturn + 1
-                    tkinter.messagebox.showinfo("Received", "Your camera has been signed out, Thank you.")
+                    rebSignout = rebSignout - 1 # minus one from signout when email is valid 
+                    rebReturn =  rebReturn + 1   # Adds one from return when email is vali
+                    tkinter.messagebox.showinfo("Received", "Your camera has been signed out, Thank you.")  #prints message if valid 
             else:
-                tkinter.messagebox.showinfo("Incorrect Email", "Your email is invalid, please try again.")
+                tkinter.messagebox.showinfo("Incorrect Email", "Your email is invalid, please try again.") # prints if user types wrong email
         emailText = Text(newEmailWindow, height=1, width=19)
-        emailText.insert("1.0", "What is your email?")
+        emailText.insert("1.0", "What is your email?") # prints tittle 
         emailText.place(x=190, y=70)
-        emailText.config(state=DISABLED)
+        emailText.config(state=DISABLED) #not able to edit text
         emailText.pack()
         emailInput = Entry(newEmailWindow)
         emailInput.pack()
-        getEmail = Button(newEmailWindow, text="Enter", command=lambda: collectEmail())
+        getEmail = Button(newEmailWindow, text="Enter", command=lambda: collectEmail()) # press to enter email
         getEmail.pack()
         
-    cam2 = Button(newWindow, text = "press to sign out", command = lambda:rebEmailWindow())
+    cam2 = Button(newWindow, text = "press to sign out", command = lambda:rebEmailWindow()) #press to sign out rebel 
     cam2.place(x = 280, y = 330)
     reb = Text(newWindow, height=1, width=7)
-    reb.insert("1.0", ("Rebel", rebSignout))
+    reb.insert("1.0", ("Rebel", rebSignout)) # Adds Nikon to the text 
     reb.config(state = DISABLED)
     reb.place(x= 380, y = 330)
 
