@@ -276,8 +276,37 @@ def reportWindow():
     reb.config(state = DISABLED)
     
     def RestoreReb():
-        pass
-    
+        newRestoreWindow = Toplevel(newWindow)
+        newRestoreWindow.geometry("700x700")
+        newRestoreWindow.configure(bg="beige")
+        def ValidPass():
+            global AdminPass
+            global rebReport
+            global rebSignout
+            adminValue = AdminInput.get()
+            if rebReport == 0:
+                 tkinter.messagebox.showinfo("No cameras", "There are no cameras that are in repair")
+            elif adminValue==AdminPass:
+                rebReport = rebReport -1
+                rebSignout = rebSignout + 1
+                tkinter.messagebox.showinfo("sucesss", "Rebel is now repaired and good to go!")
+            else:
+                 tkinter.messagebox.showinfo("wrong", "Administration password is incorrect, please try again")
+        AdminText = Text(newRestoreWindow, height=1, width=30)
+        AdminText.insert("1.0", "Enter Administration password")
+        AdminText.config(state=DISABLED)
+        AdminText.pack()
+        AdminInput = Entry(newRestoreWindow)
+        AdminInput.pack()
+        Pass = Button(newRestoreWindow, text="Enter", command=lambda: ValidPass())
+        Pass.pack()
+
+    rebRestore = Button(newWindow, text = "restore(ADMINONLY)", command = lambda: RestoreReb())
+    rebRestore.place(x = 280, y = 400)
+    restore = Text(newWindow, height=1, width=7)
+    restore.insert("1.0", ("rebel",rebReport))
+    restore.place(x=420,y = 400)
+    restore.config(state = DISABLED)
     def RestoreNik():
         pass
     #reportImage = Image.open("<downloads/camera.JPEG>")
