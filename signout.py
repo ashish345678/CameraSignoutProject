@@ -304,8 +304,8 @@ def reportWindow():
 
     rebRestore = Button(newWindow, text = "restore(ADMINONLY)", command = lambda: RestoreReb())
     rebRestore.place(x = 280, y = 400)
-    restore = Text(newWindow, height=1, width=7)
-    restore.insert("1.0", ("rebel",rebReport))
+    restore = Text(newWindow, height=1, width=30)
+    restore.insert("1.0", ("rebels in repair",rebReport))
     restore.place(x=420,y = 400)
     restore.config(state = DISABLED)
     def RestoreNik():
@@ -339,7 +339,12 @@ def reportWindow():
         getPassword.pack()                                              # Pack the button
 
     nikRestore = Button(newWindow, text="Restore Nikon", command=lambda: RestoreNik())      # Take the user to the restore window for Nikon
-    nikRestore.place(x=300, y=430)                                      # Place the button on the window
+    nikRestore.place(x=300, y=430)  
+    restoreNik = Text(newWindow, height=1, width=30)
+    restoreNik.insert("1.0", ("nikons in repair",rebReport))
+    restoreNik.config(state=DISABLED)
+    restoreNik.place(x=420,y = 430)
+                                       # Place the button on the window
     #reportImage = Image.open("<downloads/camera.JPEG>")
 
 
@@ -358,6 +363,7 @@ Report.place(x = 450, y = 300)
 Report.place(height=75, width=125)
 
 
-file.close()
+
 
 root.mainloop()
+file.close()
