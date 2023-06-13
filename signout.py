@@ -108,7 +108,7 @@ def signoutWindow():
     cam2 = Button(newWindow, text = "press to sign out", command = lambda:rebEmailWindow()) #press to sign out rebel 
     cam2.place(x = 280, y = 330)
     reb = Text(newWindow, height=1, width=7)
-    reb.insert("1.0", ("Rebel", rebSignout)) # Adds Nikon to the text 
+    reb.insert("1.0", ("Rebel", rebSignout)) # Adds Reb to the text 
     reb.config(state = DISABLED)
     reb.place(x= 380, y = 330)
 
